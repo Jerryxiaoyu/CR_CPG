@@ -98,7 +98,7 @@ for v in variants:
     max_time = v['max_time']
     fitness_mode = v['fitness_mode']
 
-    os.system("python3 -m scoop ../GA_examples/GA_main.py " +
+    os.system("python3 -m scoop GA_examples/GA_main.py " +
               " --seed " + str(seed) +
               " --env_name " + str(env_name) +
               " --pop_size " + str(pop_size) +
