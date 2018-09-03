@@ -1,0 +1,3 @@
+[37m[01m[2018-09-01 15:40:35,999] [System] parmeters: Namespace(CXPB=0.8, MUTPB=0.1, env_name='CellrobotSnake2Env-v0', exp_group_dir='Sep_01GA_CPG_Exp1', fitness_mode=6, gain_max=2.0, max_gen=2, max_time=10.0, pop_size=8, seed=1, task_mode='4')[0m
+[37m[01m[2018-09-01 15:40:35,999] *********************************************[0m
+[37m[01m[2018-09-01 15:40:35,999] ENV : CellrobotSnake2Env-v0               task_mode: 4[0m

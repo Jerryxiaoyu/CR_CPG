@@ -1,0 +1,1 @@
+python3 -m scoop GA_butterfly_examples/ga_2_butterfly.py --pop_size  150 --max_gen 30 --CXPB 0.8 --MUTPB 0.1  --gain_max 2.0

@@ -1,0 +1,24 @@
+[37m[01m[2018-09-01 15:46:44,371] [System] parmeters: Namespace(CXPB=0.8, MUTPB=0.1, env_name='CellrobotButterflyEnv-v0', exp_group_dir='Sep_01GA_CPG_Exp1', fitness_mode=6, gain_max=2.0, max_gen=2, max_time=10.0, pop_size=8, seed=1, task_mode='5')[0m
+[37m[01m[2018-09-01 15:46:44,371] *********************************************[0m
+[37m[01m[2018-09-01 15:46:44,371] ENV : CellrobotButterflyEnv-v0               task_mode: 5[0m
+[37m[01m[2018-09-01 15:46:44,376] [System] parmeters: Namespace(CXPB=0.8, MUTPB=0.1, env_name='CellrobotButterflyEnv-v0', exp_group_dir='Sep_01GA_CPG_Exp1', fitness_mode=6, gain_max=2.0, max_gen=2, max_time=10.0, pop_size=8, seed=1, task_mode='5')[0m
+[37m[01m[2018-09-01 15:46:44,376] *********************************************[0m
+[37m[01m[2018-09-01 15:46:44,376] ENV : CellrobotButterflyEnv-v0               task_mode: 5[0m
+[37m[01m[2018-09-01 15:46:44,397] [System] parmeters: Namespace(CXPB=0.8, MUTPB=0.1, env_name='CellrobotButterflyEnv-v0', exp_group_dir='Sep_01GA_CPG_Exp1', fitness_mode=6, gain_max=2.0, max_gen=2, max_time=10.0, pop_size=8, seed=1, task_mode='5')[0m
+[37m[01m[2018-09-01 15:46:44,397] *********************************************[0m
+[37m[01m[2018-09-01 15:46:44,397] ENV : CellrobotButterflyEnv-v0               task_mode: 5[0m
+[37m[01m[2018-09-01 15:46:44,458] [System] parmeters: Namespace(CXPB=0.8, MUTPB=0.1, env_name='CellrobotButterflyEnv-v0', exp_group_dir='Sep_01GA_CPG_Exp1', fitness_mode=6, gain_max=2.0, max_gen=2, max_time=10.0, pop_size=8, seed=1, task_mode='5')[0m
+[37m[01m[2018-09-01 15:46:44,458] *********************************************[0m
+[37m[01m[2018-09-01 15:46:44,458] ENV : CellrobotButterflyEnv-v0               task_mode: 5[0m
+[37m[01m[2018-09-01 15:46:44,458] [System] parmeters: Namespace(CXPB=0.8, MUTPB=0.1, env_name='CellrobotButterflyEnv-v0', exp_group_dir='Sep_01GA_CPG_Exp1', fitness_mode=6, gain_max=2.0, max_gen=2, max_time=10.0, pop_size=8, seed=1, task_mode='5')[0m
+[37m[01m[2018-09-01 15:46:44,458] *********************************************[0m
+[37m[01m[2018-09-01 15:46:44,459] ENV : CellrobotButterflyEnv-v0               task_mode: 5[0m
+[37m[01m[2018-09-01 15:46:44,490] [System] parmeters: Namespace(CXPB=0.8, MUTPB=0.1, env_name='CellrobotButterflyEnv-v0', exp_group_dir='Sep_01GA_CPG_Exp1', fitness_mode=6, gain_max=2.0, max_gen=2, max_time=10.0, pop_size=8, seed=1, task_mode='5')[0m
+[37m[01m[2018-09-01 15:46:44,490] *********************************************[0m
+[37m[01m[2018-09-01 15:46:44,490] ENV : CellrobotButterflyEnv-v0               task_mode: 5[0m
+[37m[01m[2018-09-01 15:46:44,494] [System] parmeters: Namespace(CXPB=0.8, MUTPB=0.1, env_name='CellrobotButterflyEnv-v0', exp_group_dir='Sep_01GA_CPG_Exp1', fitness_mode=6, gain_max=2.0, max_gen=2, max_time=10.0, pop_size=8, seed=1, task_mode='5')[0m
+[37m[01m[2018-09-01 15:46:44,494] *********************************************[0m
+[37m[01m[2018-09-01 15:46:44,494] ENV : CellrobotButterflyEnv-v0               task_mode: 5[0m
+[37m[01m[2018-09-01 15:46:44,533] [System] parmeters: Namespace(CXPB=0.8, MUTPB=0.1, env_name='CellrobotButterflyEnv-v0', exp_group_dir='Sep_01GA_CPG_Exp1', fitness_mode=6, gain_max=2.0, max_gen=2, max_time=10.0, pop_size=8, seed=1, task_mode='5')[0m
+[37m[01m[2018-09-01 15:46:44,533] *********************************************[0m
+[37m[01m[2018-09-01 15:46:44,533] ENV : CellrobotButterflyEnv-v0               task_mode: 5[0m

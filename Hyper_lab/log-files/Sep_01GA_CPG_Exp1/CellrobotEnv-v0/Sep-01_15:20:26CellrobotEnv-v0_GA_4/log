@@ -1,0 +1,125 @@
+[37m[01m[2018-09-01 15:20:26,003] [System] parmeters: Namespace(CXPB=0.8, MUTPB=0.1, env_name='CellrobotEnv-v0', exp_group_dir='Sep_01GA_CPG_Exp1', fitness_mode=6, gain_max=2.0, max_gen=2, max_time=10.0, pop_size=8, seed=1, task_mode='4')[0m
+[37m[01m[2018-09-01 15:20:26,004] *********************************************[0m
+[37m[01m[2018-09-01 15:20:26,004] ENV : CellrobotEnv-v0               task_mode: 4[0m
+[37m[01m[2018-09-01 15:20:26,004] particles_num : 40   [0m
+[37m[01m[2018-09-01 15:20:26,004] ENV : CellrobotEnv-v0[0m
+[37m[01m[2018-09-01 15:20:26,004] *********************************************[0m
+[36m[01m[2018-09-01 15:20:26,004] [GA] Running ga_2[0m
+[36m[01m[2018-09-01 15:20:26,004] [GA] Creating position bounds[0m
+[36m[01m[2018-09-01 15:20:26,004] [GA] Logging position bounds[0m
+[37m[01m[2018-09-01 15:20:26,004] [GA] FLT_MIN_KF=0.2, FLT_MAX_KF=1.0[0m
+[37m[01m[2018-09-01 15:20:26,004] [GA] FLT_MIN_GAIN0=-2.0, FLT_MAX_GAIN0=2.0[0m
+[37m[01m[2018-09-01 15:20:26,004] [GA] FLT_MIN_BIAS0=-1.5707963267948966, FLT_MAX_BIAS0=1.5707963267948966[0m
+[37m[01m[2018-09-01 15:20:26,004] [GA] FLT_MIN_PHASE=-3.141592653589793, FLT_MAX_PHASE=3.141592653589793[0m
+[37m[01m[2018-09-01 15:20:26,004] [System] parmeters: Namespace(CXPB=0.8, MUTPB=0.1, env_name='CellrobotEnv-v0', exp_group_dir='Sep_01GA_CPG_Exp1', fitness_mode=6, gain_max=2.0, max_gen=2, max_time=10.0, pop_size=8, seed=1, task_mode='4')[0m
+[37m[01m[2018-09-01 15:20:26,005] *********************************************[0m
+[37m[01m[2018-09-01 15:20:26,005] ENV : CellrobotEnv-v0               task_mode: 4[0m
+[37m[01m[2018-09-01 15:20:26,005] particles_num : 40   [0m
+[37m[01m[2018-09-01 15:20:26,005] ENV : CellrobotEnv-v0[0m
+[37m[01m[2018-09-01 15:20:26,005] *********************************************[0m
+[36m[01m[2018-09-01 15:20:26,005] [GA] Running ga_2[0m
+[36m[01m[2018-09-01 15:20:26,005] [GA] Creating position bounds[0m
+[36m[01m[2018-09-01 15:20:26,005] [GA] Logging position bounds[0m
+[37m[01m[2018-09-01 15:20:26,005] [GA] FLT_MIN_KF=0.2, FLT_MAX_KF=1.0[0m
+[37m[01m[2018-09-01 15:20:26,005] [GA] FLT_MIN_GAIN0=-2.0, FLT_MAX_GAIN0=2.0[0m
+[37m[01m[2018-09-01 15:20:26,005] [GA] FLT_MIN_BIAS0=-1.5707963267948966, FLT_MAX_BIAS0=1.5707963267948966[0m
+[37m[01m[2018-09-01 15:20:26,005] [GA] FLT_MIN_PHASE=-3.141592653589793, FLT_MAX_PHASE=3.141592653589793[0m
+[37m[01m[2018-09-01 15:20:26,017] [System] parmeters: Namespace(CXPB=0.8, MUTPB=0.1, env_name='CellrobotEnv-v0', exp_group_dir='Sep_01GA_CPG_Exp1', fitness_mode=6, gain_max=2.0, max_gen=2, max_time=10.0, pop_size=8, seed=1, task_mode='4')[0m
+[37m[01m[2018-09-01 15:20:26,017] *********************************************[0m
+[37m[01m[2018-09-01 15:20:26,017] ENV : CellrobotEnv-v0               task_mode: 4[0m
+[37m[01m[2018-09-01 15:20:26,017] particles_num : 40   [0m
+[37m[01m[2018-09-01 15:20:26,017] ENV : CellrobotEnv-v0[0m
+[37m[01m[2018-09-01 15:20:26,017] *********************************************[0m
+[36m[01m[2018-09-01 15:20:26,017] [GA] Running ga_2[0m
+[36m[01m[2018-09-01 15:20:26,018] [GA] Creating position bounds[0m
+[36m[01m[2018-09-01 15:20:26,018] [GA] Logging position bounds[0m
+[37m[01m[2018-09-01 15:20:26,018] [GA] FLT_MIN_KF=0.2, FLT_MAX_KF=1.0[0m
+[37m[01m[2018-09-01 15:20:26,018] [GA] FLT_MIN_GAIN0=-2.0, FLT_MAX_GAIN0=2.0[0m
+[37m[01m[2018-09-01 15:20:26,018] [GA] FLT_MIN_BIAS0=-1.5707963267948966, FLT_MAX_BIAS0=1.5707963267948966[0m
+[37m[01m[2018-09-01 15:20:26,018] [GA] FLT_MIN_PHASE=-3.141592653589793, FLT_MAX_PHASE=3.141592653589793[0m
+[37m[01m[2018-09-01 15:20:26,079] [System] parmeters: Namespace(CXPB=0.8, MUTPB=0.1, env_name='CellrobotEnv-v0', exp_group_dir='Sep_01GA_CPG_Exp1', fitness_mode=6, gain_max=2.0, max_gen=2, max_time=10.0, pop_size=8, seed=1, task_mode='4')[0m
+[37m[01m[2018-09-01 15:20:26,079] *********************************************[0m
+[37m[01m[2018-09-01 15:20:26,079] ENV : CellrobotEnv-v0               task_mode: 4[0m
+[37m[01m[2018-09-01 15:20:26,079] particles_num : 40   [0m
+[37m[01m[2018-09-01 15:20:26,079] ENV : CellrobotEnv-v0[0m
+[37m[01m[2018-09-01 15:20:26,079] *********************************************[0m
+[36m[01m[2018-09-01 15:20:26,079] [GA] Running ga_2[0m
+[36m[01m[2018-09-01 15:20:26,079] [GA] Creating position bounds[0m
+[36m[01m[2018-09-01 15:20:26,079] [GA] Logging position bounds[0m
+[37m[01m[2018-09-01 15:20:26,079] [GA] FLT_MIN_KF=0.2, FLT_MAX_KF=1.0[0m
+[37m[01m[2018-09-01 15:20:26,079] [GA] FLT_MIN_GAIN0=-2.0, FLT_MAX_GAIN0=2.0[0m
+[37m[01m[2018-09-01 15:20:26,079] [GA] FLT_MIN_BIAS0=-1.5707963267948966, FLT_MAX_BIAS0=1.5707963267948966[0m
+[37m[01m[2018-09-01 15:20:26,079] [GA] FLT_MIN_PHASE=-3.141592653589793, FLT_MAX_PHASE=3.141592653589793[0m
+[37m[01m[2018-09-01 15:20:26,083] [System] parmeters: Namespace(CXPB=0.8, MUTPB=0.1, env_name='CellrobotEnv-v0', exp_group_dir='Sep_01GA_CPG_Exp1', fitness_mode=6, gain_max=2.0, max_gen=2, max_time=10.0, pop_size=8, seed=1, task_mode='4')[0m
+[37m[01m[2018-09-01 15:20:26,083] *********************************************[0m
+[37m[01m[2018-09-01 15:20:26,083] ENV : CellrobotEnv-v0               task_mode: 4[0m
+[37m[01m[2018-09-01 15:20:26,083] particles_num : 40   [0m
+[37m[01m[2018-09-01 15:20:26,083] ENV : CellrobotEnv-v0[0m
+[37m[01m[2018-09-01 15:20:26,083] *********************************************[0m
+[36m[01m[2018-09-01 15:20:26,083] [GA] Running ga_2[0m
+[36m[01m[2018-09-01 15:20:26,083] [GA] Creating position bounds[0m
+[36m[01m[2018-09-01 15:20:26,083] [GA] Logging position bounds[0m
+[37m[01m[2018-09-01 15:20:26,083] [GA] FLT_MIN_KF=0.2, FLT_MAX_KF=1.0[0m
+[37m[01m[2018-09-01 15:20:26,083] [GA] FLT_MIN_GAIN0=-2.0, FLT_MAX_GAIN0=2.0[0m
+[37m[01m[2018-09-01 15:20:26,083] [GA] FLT_MIN_BIAS0=-1.5707963267948966, FLT_MAX_BIAS0=1.5707963267948966[0m
+[37m[01m[2018-09-01 15:20:26,083] [GA] FLT_MIN_PHASE=-3.141592653589793, FLT_MAX_PHASE=3.141592653589793[0m
+[37m[01m[2018-09-01 15:20:26,093] [System] parmeters: Namespace(CXPB=0.8, MUTPB=0.1, env_name='CellrobotEnv-v0', exp_group_dir='Sep_01GA_CPG_Exp1', fitness_mode=6, gain_max=2.0, max_gen=2, max_time=10.0, pop_size=8, seed=1, task_mode='4')[0m
+[37m[01m[2018-09-01 15:20:26,093] *********************************************[0m
+[37m[01m[2018-09-01 15:20:26,093] ENV : CellrobotEnv-v0               task_mode: 4[0m
+[37m[01m[2018-09-01 15:20:26,093] particles_num : 40   [0m
+[37m[01m[2018-09-01 15:20:26,094] ENV : CellrobotEnv-v0[0m
+[37m[01m[2018-09-01 15:20:26,094] *********************************************[0m
+[36m[01m[2018-09-01 15:20:26,094] [GA] Running ga_2[0m
+[36m[01m[2018-09-01 15:20:26,094] [GA] Creating position bounds[0m
+[36m[01m[2018-09-01 15:20:26,094] [GA] Logging position bounds[0m
+[37m[01m[2018-09-01 15:20:26,094] [GA] FLT_MIN_KF=0.2, FLT_MAX_KF=1.0[0m
+[37m[01m[2018-09-01 15:20:26,094] [GA] FLT_MIN_GAIN0=-2.0, FLT_MAX_GAIN0=2.0[0m
+[37m[01m[2018-09-01 15:20:26,094] [GA] FLT_MIN_BIAS0=-1.5707963267948966, FLT_MAX_BIAS0=1.5707963267948966[0m
+[37m[01m[2018-09-01 15:20:26,094] [GA] FLT_MIN_PHASE=-3.141592653589793, FLT_MAX_PHASE=3.141592653589793[0m
+[37m[01m[2018-09-01 15:20:26,101] [System] parmeters: Namespace(CXPB=0.8, MUTPB=0.1, env_name='CellrobotEnv-v0', exp_group_dir='Sep_01GA_CPG_Exp1', fitness_mode=6, gain_max=2.0, max_gen=2, max_time=10.0, pop_size=8, seed=1, task_mode='4')[0m
+[37m[01m[2018-09-01 15:20:26,101] *********************************************[0m
+[37m[01m[2018-09-01 15:20:26,101] ENV : CellrobotEnv-v0               task_mode: 4[0m
+[37m[01m[2018-09-01 15:20:26,101] particles_num : 40   [0m
+[37m[01m[2018-09-01 15:20:26,101] ENV : CellrobotEnv-v0[0m
+[37m[01m[2018-09-01 15:20:26,101] *********************************************[0m
+[36m[01m[2018-09-01 15:20:26,101] [GA] Running ga_2[0m
+[36m[01m[2018-09-01 15:20:26,102] [GA] Creating position bounds[0m
+[36m[01m[2018-09-01 15:20:26,102] [GA] Logging position bounds[0m
+[37m[01m[2018-09-01 15:20:26,102] [GA] FLT_MIN_KF=0.2, FLT_MAX_KF=1.0[0m
+[37m[01m[2018-09-01 15:20:26,102] [GA] FLT_MIN_GAIN0=-2.0, FLT_MAX_GAIN0=2.0[0m
+[37m[01m[2018-09-01 15:20:26,102] [GA] FLT_MIN_BIAS0=-1.5707963267948966, FLT_MAX_BIAS0=1.5707963267948966[0m
+[37m[01m[2018-09-01 15:20:26,102] [GA] FLT_MIN_PHASE=-3.141592653589793, FLT_MAX_PHASE=3.141592653589793[0m
+[37m[01m[2018-09-01 15:20:26,161] [System] parmeters: Namespace(CXPB=0.8, MUTPB=0.1, env_name='CellrobotEnv-v0', exp_group_dir='Sep_01GA_CPG_Exp1', fitness_mode=6, gain_max=2.0, max_gen=2, max_time=10.0, pop_size=8, seed=1, task_mode='4')[0m
+[37m[01m[2018-09-01 15:20:26,161] [System] parmeters: Namespace(CXPB=0.8, MUTPB=0.1, env_name='CellrobotEnv-v0', exp_group_dir='Sep_01GA_CPG_Exp1', fitness_mode=6, gain_max=2.0, max_gen=2, max_time=10.0, pop_size=8, seed=1, task_mode='4')[0m
+[37m[01m[2018-09-01 15:20:26,161] *********************************************[0m
+[37m[01m[2018-09-01 15:20:26,161] *********************************************[0m
+[37m[01m[2018-09-01 15:20:26,161] ENV : CellrobotEnv-v0               task_mode: 4[0m
+[37m[01m[2018-09-01 15:20:26,161] ENV : CellrobotEnv-v0               task_mode: 4[0m
+[37m[01m[2018-09-01 15:20:26,161] particles_num : 40   [0m
+[37m[01m[2018-09-01 15:20:26,161] particles_num : 40   [0m
+[37m[01m[2018-09-01 15:20:26,161] ENV : CellrobotEnv-v0[0m
+[37m[01m[2018-09-01 15:20:26,161] ENV : CellrobotEnv-v0[0m
+[37m[01m[2018-09-01 15:20:26,161] *********************************************[0m
+[37m[01m[2018-09-01 15:20:26,161] *********************************************[0m
+[36m[01m[2018-09-01 15:20:26,161] [GA] Running ga_2[0m
+[36m[01m[2018-09-01 15:20:26,161] [GA] Running ga_2[0m
+[36m[01m[2018-09-01 15:20:26,161] [GA] Creating position bounds[0m
+[36m[01m[2018-09-01 15:20:26,161] [GA] Creating position bounds[0m
+[36m[01m[2018-09-01 15:20:26,161] [GA] Logging position bounds[0m
+[36m[01m[2018-09-01 15:20:26,161] [GA] Logging position bounds[0m
+[37m[01m[2018-09-01 15:20:26,161] [GA] FLT_MIN_KF=0.2, FLT_MAX_KF=1.0[0m
+[37m[01m[2018-09-01 15:20:26,161] [GA] FLT_MIN_KF=0.2, FLT_MAX_KF=1.0[0m
+[37m[01m[2018-09-01 15:20:26,162] [GA] FLT_MIN_GAIN0=-2.0, FLT_MAX_GAIN0=2.0[0m
+[37m[01m[2018-09-01 15:20:26,162] [GA] FLT_MIN_GAIN0=-2.0, FLT_MAX_GAIN0=2.0[0m
+[37m[01m[2018-09-01 15:20:26,162] [GA] FLT_MIN_BIAS0=-1.5707963267948966, FLT_MAX_BIAS0=1.5707963267948966[0m
+[37m[01m[2018-09-01 15:20:26,162] [GA] FLT_MIN_BIAS0=-1.5707963267948966, FLT_MAX_BIAS0=1.5707963267948966[0m
+[37m[01m[2018-09-01 15:20:26,162] [GA] FLT_MIN_PHASE=-3.141592653589793, FLT_MAX_PHASE=3.141592653589793[0m
+[37m[01m[2018-09-01 15:20:26,162] [GA] FLT_MIN_PHASE=-3.141592653589793, FLT_MAX_PHASE=3.141592653589793[0m
+[36m[01m[2018-09-01 15:20:26,162] [GA] Starting genetic algorithm[0m
+[36m[01m[2018-09-01 15:20:26,162] [GA] Starting genetic algorithm[0m
+[36m[01m[2018-09-01 15:20:26,162] [GA] Finding the fitness of individuals in the initial generation[0m
+[36m[01m[2018-09-01 15:20:26,162] [GA] Finding the fitness of individuals in the initial generation[0m
+[36m[01m[2018-09-01 15:20:48,532] [GA1] Running generation 1[0m
+[36m[01m[2018-09-01 15:20:48,532] [GA1] Running generation 1[0m
+[37m[01m[2018-09-01 15:20:48,533] [GA1] Selecting the next generation[0m
+[37m[01m[2018-09-01 15:20:48,533] [GA1] Selecting the next generation[0m

@@ -1,0 +1,24 @@
+[37m[01m[2018-09-01 15:40:37,299] [System] parmeters: Namespace(CXPB=0.8, MUTPB=0.1, env_name='CellrobotSnake2Env-v0', exp_group_dir='Sep_01GA_CPG_Exp1', fitness_mode=6, gain_max=2.0, max_gen=2, max_time=10.0, pop_size=8, seed=1, task_mode='5')[0m
+[37m[01m[2018-09-01 15:40:37,299] *********************************************[0m
+[37m[01m[2018-09-01 15:40:37,299] ENV : CellrobotSnake2Env-v0               task_mode: 5[0m
+[37m[01m[2018-09-01 15:40:37,329] [System] parmeters: Namespace(CXPB=0.8, MUTPB=0.1, env_name='CellrobotSnake2Env-v0', exp_group_dir='Sep_01GA_CPG_Exp1', fitness_mode=6, gain_max=2.0, max_gen=2, max_time=10.0, pop_size=8, seed=1, task_mode='5')[0m
+[37m[01m[2018-09-01 15:40:37,329] *********************************************[0m
+[37m[01m[2018-09-01 15:40:37,329] ENV : CellrobotSnake2Env-v0               task_mode: 5[0m
+[37m[01m[2018-09-01 15:40:37,353] [System] parmeters: Namespace(CXPB=0.8, MUTPB=0.1, env_name='CellrobotSnake2Env-v0', exp_group_dir='Sep_01GA_CPG_Exp1', fitness_mode=6, gain_max=2.0, max_gen=2, max_time=10.0, pop_size=8, seed=1, task_mode='5')[0m
+[37m[01m[2018-09-01 15:40:37,353] *********************************************[0m
+[37m[01m[2018-09-01 15:40:37,353] ENV : CellrobotSnake2Env-v0               task_mode: 5[0m
+[37m[01m[2018-09-01 15:40:37,381] [System] parmeters: Namespace(CXPB=0.8, MUTPB=0.1, env_name='CellrobotSnake2Env-v0', exp_group_dir='Sep_01GA_CPG_Exp1', fitness_mode=6, gain_max=2.0, max_gen=2, max_time=10.0, pop_size=8, seed=1, task_mode='5')[0m
+[37m[01m[2018-09-01 15:40:37,382] *********************************************[0m
+[37m[01m[2018-09-01 15:40:37,382] ENV : CellrobotSnake2Env-v0               task_mode: 5[0m
+[37m[01m[2018-09-01 15:40:37,383] [System] parmeters: Namespace(CXPB=0.8, MUTPB=0.1, env_name='CellrobotSnake2Env-v0', exp_group_dir='Sep_01GA_CPG_Exp1', fitness_mode=6, gain_max=2.0, max_gen=2, max_time=10.0, pop_size=8, seed=1, task_mode='5')[0m
+[37m[01m[2018-09-01 15:40:37,383] *********************************************[0m
+[37m[01m[2018-09-01 15:40:37,383] ENV : CellrobotSnake2Env-v0               task_mode: 5[0m
+[37m[01m[2018-09-01 15:40:37,410] [System] parmeters: Namespace(CXPB=0.8, MUTPB=0.1, env_name='CellrobotSnake2Env-v0', exp_group_dir='Sep_01GA_CPG_Exp1', fitness_mode=6, gain_max=2.0, max_gen=2, max_time=10.0, pop_size=8, seed=1, task_mode='5')[0m
+[37m[01m[2018-09-01 15:40:37,411] *********************************************[0m
+[37m[01m[2018-09-01 15:40:37,411] ENV : CellrobotSnake2Env-v0               task_mode: 5[0m
+[37m[01m[2018-09-01 15:40:37,456] [System] parmeters: Namespace(CXPB=0.8, MUTPB=0.1, env_name='CellrobotSnake2Env-v0', exp_group_dir='Sep_01GA_CPG_Exp1', fitness_mode=6, gain_max=2.0, max_gen=2, max_time=10.0, pop_size=8, seed=1, task_mode='5')[0m
+[37m[01m[2018-09-01 15:40:37,457] *********************************************[0m
+[37m[01m[2018-09-01 15:40:37,457] ENV : CellrobotSnake2Env-v0               task_mode: 5[0m
+[37m[01m[2018-09-01 15:40:37,473] [System] parmeters: Namespace(CXPB=0.8, MUTPB=0.1, env_name='CellrobotSnake2Env-v0', exp_group_dir='Sep_01GA_CPG_Exp1', fitness_mode=6, gain_max=2.0, max_gen=2, max_time=10.0, pop_size=8, seed=1, task_mode='5')[0m
+[37m[01m[2018-09-01 15:40:37,473] *********************************************[0m
+[37m[01m[2018-09-01 15:40:37,473] ENV : CellrobotSnake2Env-v0               task_mode: 5[0m
