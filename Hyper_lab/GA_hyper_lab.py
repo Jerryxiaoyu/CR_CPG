@@ -1,18 +1,20 @@
 from utils.instrument import VariantGenerator, variant, IO
 import os
 from datetime import datetime
+import shutil
+import glob
 class VG(VariantGenerator):
     
     @variant
     def env_name(self):
-        return [ 'CellrobotEnv-v0', 'Cellrobot2Env-v0','CellrobotSnakeEnv-v0' , 'CellrobotSnake2Env-v0','CellrobotButterflyEnv-v0']  # 'Cellrobot2Env-v0','CellrobotSnakeEnv-v0' , 'CellrobotSnake2Env-v0','CellrobotButterflyEnv-v0'
+        return [ 'CellrobotEnv-v0' ]  # 'Cellrobot2Env-v0','CellrobotSnakeEnv-v0' , 'CellrobotSnake2Env-v0','CellrobotButterflyEnv-v0'
     @variant
     def pop_size(self):
-        return [300]
+        return [2 ]
     
     @variant
     def max_gen(self):
-        return [ 30 ]
+        return [ 2 ]
 
     @variant
     def CXPB(self):
@@ -29,7 +31,7 @@ class VG(VariantGenerator):
 
     @variant
     def task_mode(self):
-        return ['2' ,'3', '4', '5', '2_sin', '5_sin'  ]#  '2' ,'3', '4', '5', '2_sin', '5_sin'
+        return ['2'  ]#  '2' ,'3', '4', '5', '2_sin', '5_sin'
     @variant
     def max_time(self):
         return [ 10.0 ]
@@ -54,6 +56,10 @@ for v in variants:
 exp_group_dir = datetime.now().strftime("%b_%d")+EXP_NAME+'_Exp{}'.format(exp_id)
 group_dir = os.path.join('log-files', exp_group_dir)
 os.makedirs(group_dir)
+
+filenames = glob.glob('*.py')  # put copy of all python files in log_dir
+for filename in filenames:  # for reference
+    shutil.copy(filename, group_dir)
 
 variants = VG().variants()
 num = 0
