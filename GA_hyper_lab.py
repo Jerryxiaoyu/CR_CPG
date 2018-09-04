@@ -41,7 +41,7 @@ class VG(VariantGenerator):
         return [6]
  
     
-exp_id = 1
+exp_id = 4
 EXP_NAME ='GA_CPG'
 group_note ="************ABOUT THIS EXPERIMENT****************\n" \
             "测试所有环境是否可用!"
