@@ -60,7 +60,7 @@ class RobotMonitorThread(Thread):
         # butterfly7, 6,13
         # ant   7,15
         
-        if env.env.spec.id == 'CellrobotEnv-v0' or env.env.spec.id == 'Cellrobot2Env-v0' :
+        if env.env.spec.id == 'CellrobotEnv-v0' or env.env.spec.id == 'Cellrobot2Env-v0'or 'CellrobotEnv_r-v0' :
             self.obs_low = 6
             self.obs_high = self.obs_low + 13
 

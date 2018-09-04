@@ -33,7 +33,7 @@ args = parser.parse_args()
 print(args)
 env_name  = args.env_name
 task_mode = args.task_mode
-if env_name == 'CellrobotEnv-v0' or env_name == 'Cellrobot2Env-v0':
+if env_name == 'CellrobotEnv-v0' or env_name == 'Cellrobot2Env-v0' or 'CellrobotEnv_r-v0':
     CPG_parm_num = 13
     if task_mode == '2':
         from CPG_core.quadruped_osc.oscillator_2 import oscillator_nw
