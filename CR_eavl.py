@@ -1,6 +1,6 @@
 import numpy as np
 from CPG_core.quadruped_osc.oscillator_2_sin import oscillator_nw        #quaquepade
-from CPG_core.snake_osc.snake_oscillator_5_sin import oscillator_nw  #snake
+from CPG_core.snake_osc.snake_oscillator_2_sin import oscillator_nw  #snake
 #from CPG_core.quadruped_osc.oscillator_2_sin import oscillator_nw
 #from CPG_core.butterfly_osc.butterfly_oscillator_5_sin import oscillator_nw
 
@@ -76,5 +76,7 @@ position_vector = [0.8700919445712163, 1.0963204915585703, 1.5037062829799592, 0
 # Snake 5_sin
 position_vector = [0.9173704470842545, 1.8757480589886844, 1.8027811693799154, -1.9027331044115612, 1.6011269726457071, 0.7742241244243635, 0.6129145509808294, 1.098035407067393, 1.6652877009928435, -1.7682323463220193, -1.3261370736821914, 0.5126077720139159, 0.20694537629273757, 1.0491197959905758, 0.8324003668419717, 1.4496576346943852, -0.801890156565281, -1.4549692171631332, 1.320277223958132, 0.8287043767350322, -0.2920787969949852, 0.007059335275624967, -0.26211955604930015, 0.4105417150805559, -1.4522789339044255, -2.203981332269547, -2.0107589589756465, 1.0531484775614386, -1, -1, -1, 1, 1, 1, -1, -1, -1]
 
+
+# Snake 2_sin PSO
 env_name = 'CellrobotSnakeEnv-v0' #'CellrobotButterflyEnv-v0' #'Cellrobot2Env-v0'# 'CellrobotSnakeEnv-v0'
 oscillator_nw(position_vector, max_time=10.0, fitness_option=6, plot = False, log_dis = False, render=True, env_name=env_name )

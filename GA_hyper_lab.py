@@ -7,7 +7,7 @@ class VG(VariantGenerator):
     
     @variant
     def env_name(self):
-        return [ 'CellrobotSnakeEnv-v0' , 'CellrobotSnake2Env-v0','CellrobotButterflyEnv-v0' ]  #'CellrobotEnv-v0' 'Cellrobot2Env-v0','CellrobotSnakeEnv-v0' , 'CellrobotSnake2Env-v0','CellrobotButterflyEnv-v0'
+        return [ 'CellrobotEnv-v0' ]  # 'Cellrobot2Env-v0','CellrobotSnakeEnv-v0' , 'CellrobotSnake2Env-v0','CellrobotButterflyEnv-v0'
     @variant
     def pop_size(self):
         return [300 ]
