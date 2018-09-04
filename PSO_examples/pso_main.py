@@ -111,6 +111,11 @@ logger = LoggerCsv(log_dir, csvname='log_results')
 results_IO = IO(os.path.join(log_dir, 'results.pkl'))
 args_IO = IO(os.path.join(log_dir, 'args.pkl')).to_pickle(args)
 
+log.info('[System] parmeters: {}'.format(args))
+log.info('*********************************************')
+log.info('ENV : {}               task_mode: {}'.format(env_name, task_mode) )
+
+log.info('ENV : {}'.format(env_name) )
 
 
 
@@ -199,6 +204,13 @@ def main():
         else:
             results.update(result)
         results_IO.to_pickle(results)
+        
+
+        logger.log({'generation':g,
+                   'best_params':[best[i] for i in range(len(best))],
+                   'best_fitness':best.fitness.values[0],
+                    })
+        logger.write(display=False)
 
     log.infov('best ={}'.format(best.fitness.values[0]))
     log.infov('best parm :{}'.format([best[i] for i in range(len(best))]))

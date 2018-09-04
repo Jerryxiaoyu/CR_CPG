@@ -3,7 +3,6 @@ import os
 path = os.getcwd()
 # print(path)
 # os.chdir(path)
-import sys
-sys.path.append('..')
+print('hahahahah!!!!')
 
 from utils.Logger import configure_log_dir

@@ -191,11 +191,11 @@ class RobotMonitorThread(Thread):
                 # Calculate the average height
                 self.avg_z = sum(self.z_list) / float(len(self.z_list))
             # render
-            
+            if self.render:
+                self.env.render()
 
             if self.t == 10:
-                if self.render:
-                    self.env.render()
+                
                     
                 if self.monitor_path is not None:
                     #self.rec.capture_frame()   # 放在底层会使得控制不准!
