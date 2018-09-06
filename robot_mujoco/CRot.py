@@ -9,7 +9,8 @@ import gym
 
 joint_name_motor_tab ={'cell0':0, 'cell1':1,'cell2':2,'cell3':3,'cell4':4,
                         'cell5':5, 'cell6':6,'cell7':7,'cell8':8,'cell9':9,
-                        'cell10':10, 'cell11':11,'cell12':12
+                        'cell10':10, 'cell11':11,'cell12':12,'cell13':13, 'cell14':14,'cell15':15,'cell16':16,'cell17':17,
+                        'cell18':18, 'cell19':19,'cell20':20
                        }
 
 class CRbot(Robot):

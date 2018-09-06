@@ -16,7 +16,7 @@ from functools import partial
 
 parser = argparse.ArgumentParser(description='DeepPILCO')
 parser.add_argument('--seed', type=int, default=1)
-parser.add_argument('--env_name', type=str, default='CellrobotSnakeEnv-v0')  #  'CellrobotEnv-v0', 'Cellrobot2Env-v0','CellrobotSnakeEnv-v0' , 'CellrobotSnake2Env-v0','CellrobotButterflyEnv-v0'
+parser.add_argument('--env_name', type=str, default='CellrobotBigdog2Env-v0')  #  'CellrobotEnv-v0', 'Cellrobot2Env-v0','CellrobotSnakeEnv-v0' , 'CellrobotSnake2Env-v0','CellrobotButterflyEnv-v0'
 parser.add_argument('--pop_size', type=int, default=1) #
 parser.add_argument('--max_gen', type=int, default=3)
 parser.add_argument('--CXPB', type=float, default=0.8)
@@ -33,7 +33,7 @@ args = parser.parse_args()
 print(args)
 env_name  = args.env_name
 task_mode = args.task_mode
-if env_name == 'CellrobotEnv-v0' or env_name == 'Cellrobot2Env-v0' or 'CellrobotEnv_r-v0':
+if env_name == 'CellrobotEnv-v0' or env_name == 'Cellrobot2Env-v0' or env_name == 'CellrobotEnv_r-v0':
     CPG_parm_num = 13
     if task_mode == '2':
         from CPG_core.quadruped_osc.oscillator_2 import oscillator_nw
@@ -107,6 +107,30 @@ elif env_name == 'CellrobotButterflyEnv-v0'  :
         mutate_fun = MYmutGaussian
     else:
         raise print('task mode does not exist')
+elif env_name == 'CellrobotBigdog2Env-v0':
+    CPG_parm_num = 14
+    if task_mode == '2':
+        from CPG_core.bigdog2_osc.bigdog2_oscillator_2 import oscillator_nw
+    
+        particles_num = 29
+        parm_list_key = ['gain', 'bias']
+        mutate_fun = tools.mutGaussian
+
+    elif task_mode == '2_sin':
+        from CPG_core.bigdog2_osc.bigdog2_oscillator_2_sin import oscillator_nw
+    
+        particles_num = 43
+        parm_list_key = ['gain', 'bias', 'phase']
+        mutate_fun = tools.mutGaussian
+    elif task_mode == '5_sin':
+        from CPG_core.bigdog2_osc.bigdog2_oscillator_5_sin import oscillator_nw
+    
+        particles_num = 57
+        parm_list_key = ['gain', 'bias', 'phase', 'w']
+    
+        mutate_fun = MYmutGaussian
+    
+    
 else:
     raise print("env :{} task does not implemented.".format(args.env_name))
 

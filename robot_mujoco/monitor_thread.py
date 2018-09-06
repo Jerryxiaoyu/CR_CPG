@@ -60,7 +60,7 @@ class RobotMonitorThread(Thread):
         # butterfly7, 6,13
         # ant   7,15
         
-        if env.env.spec.id == 'CellrobotEnv-v0' or env.env.spec.id == 'Cellrobot2Env-v0'or 'CellrobotEnv_r-v0' :
+        if env.env.spec.id == 'CellrobotEnv-v0' or env.env.spec.id == 'Cellrobot2Env-v0'or env.env.spec.id == 'CellrobotEnv_r-v0' :
             self.obs_low = 6
             self.obs_high = self.obs_low + 13
 
@@ -76,7 +76,12 @@ class RobotMonitorThread(Thread):
             self.obs_high = self.obs_low + 7
 
             self.height_threshold = 0.00
-            
+        elif env.env.spec.id == 'CellrobotBigdog2Env-v0':
+            self.obs_low = 6
+            self.obs_high = self.obs_low + 17
+    
+            self.height_threshold = 0.10
+
         else:
             assert 'ENV error!'
  
