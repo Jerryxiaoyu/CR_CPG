@@ -34,7 +34,8 @@ class CPG_network(object):
         self.kf = position_vector[0]
         self.num_CPG = len(parm_list)
         self.CPG_list =[]
-        self.w_ms_list = [None, 1, 1,1,1, 1, 1, 1,  1, 1,1,1, 1, 1, 1,  ]
+        #self.w_ms_list = [None, 1, 1,1,1, 1, 1, 1,  1, 1,1,1, 1, 1, 1,  ]
+        self.w_ms_list = [None, 1, 1, 1, 1, 1, -1, 1, 1, 1, 1, 1, -1, 1, 1, ]
         self.master_list = [None, 0,0,1,3,3,1,6,6,2,9,9, 2,12,12   ]
         
         
