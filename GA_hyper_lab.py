@@ -9,7 +9,7 @@ class VG(VariantGenerator):
     
     @variant
     def env_name(self):
-        return ['CellrobotEnv-v0'    ]  #   'CellrobotEnv-v0' ,  'Cellrobot2Env-v0', 'CellrobotSnakeEnv-v0' , 'CellrobotSnake2Env-v0','CellrobotButterflyEnv-v0', 'CellrobotBigdog2Env-v0'
+        return ['CellrobotEnv-v0','Cellrobot2Env-v0',      ]  #   'CellrobotEnv-v0' , 'Cellrobot2Env-v0', 'CellrobotSnakeEnv-v0'  , 'CellrobotSnake2Env-v0','CellrobotButterflyEnv-v0', 'CellrobotBigdog2Env-v0'
     @variant
     def pop_size(self):
         return [8  ]
@@ -43,7 +43,7 @@ class VG(VariantGenerator):
         return [6]
  
     
-exp_id = 1
+exp_id = 7
 EXP_NAME ='GA_CPG'
 group_note ="************ABOUT THIS EXPERIMENT****************\n" \
             "测试所有环境是否可用!"
@@ -123,7 +123,7 @@ for v in variants:
               )
 
     local_dir = os.path.abspath(group_dir)
-    remote_dir = '/home/drl/PycharmProjects/DeployedProjects/CR_CPG/Hyper_lab/log-files/AWS_logfiles/'
+    remote_dir = '/home/drl/PycharmProjects/DeployedProjects/CR_CPG/Hyper_lab/log-files/AWS_logfiles/'+exp_group_dir+'/'
     ssh.upload(local_dir, remote_dir, hostname=hostname , port=port , username=username ,
                pkey_path=key_path)
      
