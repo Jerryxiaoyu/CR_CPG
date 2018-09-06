@@ -9,15 +9,15 @@ class VG(VariantGenerator):
     
     @variant
     def env_name(self):
-        return ['CellrobotEnv-v0','Cellrobot2Env-v0',      ]  #   'CellrobotEnv-v0' , 'Cellrobot2Env-v0', 'CellrobotSnakeEnv-v0'  , 'CellrobotSnake2Env-v0','CellrobotButterflyEnv-v0', 'CellrobotBigdog2Env-v0'
+        return ['CellrobotEnv-v0','Cellrobot2Env-v0', ]  #   'CellrobotEnv-v0' , 'Cellrobot2Env-v0', 'CellrobotSnakeEnv-v0'  , 'CellrobotSnake2Env-v0','CellrobotButterflyEnv-v0', 'CellrobotBigdog2Env-v0'
     @variant
     def pop_size(self):
-        return [8  ]
+        return [300 ]
     
     
     @variant
     def max_gen(self):
-        return [ 1  ]
+        return [ 40 ]
 
     @variant
     def CXPB(self):
@@ -33,7 +33,7 @@ class VG(VariantGenerator):
     
     @variant
     def task_mode(self):
-        return [ '2' ]#  '2' ,'3', '4', '5', '2_sin', '5_sin'
+        return [ '2' ,'2_sin', '5_sin',  '5'   ]#  '2' ,'3', '4', '5', '2_sin', '5_sin'
     @variant
     def max_time(self):
         return [ 10.0 ]
@@ -43,7 +43,7 @@ class VG(VariantGenerator):
         return [6]
  
     
-exp_id = 7
+exp_id = 8
 EXP_NAME ='GA_CPG'
 group_note ="************ABOUT THIS EXPERIMENT****************\n" \
             "测试所有环境是否可用!"
