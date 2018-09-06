@@ -3,6 +3,8 @@ import os
 from datetime import datetime
 import shutil
 import glob
+import paramiko
+import utils.ssh as ssh
 class VG(VariantGenerator):
     
     @variant
@@ -10,12 +12,12 @@ class VG(VariantGenerator):
         return ['CellrobotEnv-v0'    ]  #   'CellrobotEnv-v0' ,  'Cellrobot2Env-v0', 'CellrobotSnakeEnv-v0' , 'CellrobotSnake2Env-v0','CellrobotButterflyEnv-v0', 'CellrobotBigdog2Env-v0'
     @variant
     def pop_size(self):
-        return [3  ]
+        return [8  ]
     
     
     @variant
     def max_gen(self):
-        return [ 5  ]
+        return [ 1  ]
 
     @variant
     def CXPB(self):
@@ -83,6 +85,14 @@ num_exp =0
 
 seed =1
 
+# SSH Config
+hostname = '2402:f000:6:3801:2d55:548f:d03c:ccad'#'2600:1f16:e7a:a088:805d:16d6:f387:62e5'
+username = 'drl'
+key_path = '/home/ubuntu/.ssh/id_rsa_dl'
+
+port = 22
+
+
 for v in variants:
     num_exp += 1
     print(v)
@@ -111,6 +121,9 @@ for v in variants:
               " --fitness_mode " + str(fitness_mode) +
               " --exp_group_dir " + str(exp_group_dir)
               )
-    
 
+    local_dir = os.path.abspath(group_dir)
+    remote_dir = '/home/drl/PycharmProjects/DeployedProjects/CR_CPG/Hyper_lab/log-files/AWS_logfiles/'
+    ssh.upload(local_dir, remote_dir, hostname=hostname , port=port , username=username ,
+               pkey_path=key_path)
      
