@@ -7,15 +7,15 @@ class VG(VariantGenerator):
     
     @variant
     def env_name(self):
-        return [ 'CellrobotBigdog2Env-v0', 'CellrobotEnv-v0' ]  #CellrobotEnv_r-v0  'CellrobotBigdog2Env-v0'  'Cellrobot2Env-v0', 'CellrobotSnakeEnv-v0' , 'CellrobotSnake2Env-v0','CellrobotButterflyEnv-v0' CellrobotEnv_r-v0
+        return ['CellrobotEnv-v0'    ]  #   'CellrobotEnv-v0' ,  'Cellrobot2Env-v0', 'CellrobotSnakeEnv-v0' , 'CellrobotSnake2Env-v0','CellrobotButterflyEnv-v0', 'CellrobotBigdog2Env-v0'
     @variant
     def pop_size(self):
-        return [300 ]
+        return [3  ]
     
     
     @variant
     def max_gen(self):
-        return [ 50 ]
+        return [ 5  ]
 
     @variant
     def CXPB(self):
@@ -31,7 +31,7 @@ class VG(VariantGenerator):
     
     @variant
     def task_mode(self):
-        return [ '2', '2_sin'   ]#  '2' ,'3', '4', '5', '2_sin', '5_sin'
+        return [ '2' ]#  '2' ,'3', '4', '5', '2_sin', '5_sin'
     @variant
     def max_time(self):
         return [ 10.0 ]
@@ -110,6 +110,7 @@ for v in variants:
               " --max_time " + str(max_time) +
               " --fitness_mode " + str(fitness_mode) +
               " --exp_group_dir " + str(exp_group_dir)
-
               )
+    
+
      

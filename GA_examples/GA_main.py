@@ -66,7 +66,7 @@ if env_name == 'CellrobotEnv-v0' or env_name == 'Cellrobot2Env-v0' or env_name =
         parm_list_key = ['gain', 'bias', 'phase','w']
         mutate_fun = MYmutGaussian
     else:
-        raise print('task mode does not exist')
+        assert print('task mode does not exist')
 elif env_name == 'CellrobotSnakeEnv-v0' or env_name == 'CellrobotSnake2Env-v0':
     CPG_parm_num = 9
     if task_mode == '2':
@@ -85,7 +85,7 @@ elif env_name == 'CellrobotSnakeEnv-v0' or env_name == 'CellrobotSnake2Env-v0':
         parm_list_key = ['gain', 'bias', 'phase', 'w']
         mutate_fun = MYmutGaussian
     else:
-        raise print('task mode does not exist')
+        assert print('task mode does not exist')
 elif env_name == 'CellrobotButterflyEnv-v0'  :
     CPG_parm_num = 7
     if task_mode == '2':
@@ -106,7 +106,7 @@ elif env_name == 'CellrobotButterflyEnv-v0'  :
 
         mutate_fun = MYmutGaussian
     else:
-        raise print('task mode does not exist')
+        assert print('task mode does not exist')
 elif env_name == 'CellrobotBigdog2Env-v0':
     CPG_parm_num = 14
     if task_mode == '2':
@@ -129,10 +129,11 @@ elif env_name == 'CellrobotBigdog2Env-v0':
         parm_list_key = ['gain', 'bias', 'phase', 'w']
     
         mutate_fun = MYmutGaussian
-    
+    else:
+        assert print('task mode does not exist')
     
 else:
-    raise print("env :{} task does not implemented.".format(args.env_name))
+    assert print("env :{} task does not implemented.".format(args.env_name))
 
 
 env = gym.make(env_name)

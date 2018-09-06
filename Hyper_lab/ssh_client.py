@@ -19,7 +19,7 @@ import paramiko
 # # #Copy a local file (localpath) to the SFTP server as remotepath
 # # sftp.put('/root/crash-6.1.6.tar.gz','/tmp/crash-6.1.6.tar.gz')
 # scp.close()
-
+# #2402:f000:6:3801:2d55:548f:d03c:ccad/64
 
 import paramiko,datetime,os
 import socket
