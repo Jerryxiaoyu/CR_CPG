@@ -9,7 +9,7 @@ def Angle_PID(cur_angles, target_angles, target_velocities=0.1):
     
     q = cur_angles.reshape((-1, 1))
     
-    kp = 5
+    kp = 10
     
     Kp = np.diag(np.ones(q.shape[0]) * kp)
     
