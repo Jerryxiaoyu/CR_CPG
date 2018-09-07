@@ -9,7 +9,7 @@ class VG(VariantGenerator):
     
     @variant
     def env_name(self):
-        return ['CellrobotSnakeEnv-v0','CellrobotSnake2Env-v0'     ]  #   'CellrobotEnv-v0' , 'Cellrobot2Env-v0', 'CellrobotSnakeEnv-v0'  , 'CellrobotSnake2Env-v0','CellrobotButterflyEnv-v0', 'CellrobotBigdog2Env-v0'
+        return ['CellrobotEnv-v0'     ]  #   'CellrobotEnv-v0' , 'Cellrobot2Env-v0', 'CellrobotSnakeEnv-v0'  , 'CellrobotSnake2Env-v0','CellrobotButterflyEnv-v0', 'CellrobotBigdog2Env-v0'
     @variant
     def pop_size(self):
         return [300]
@@ -33,7 +33,7 @@ class VG(VariantGenerator):
 
     @variant
     def bias_max(self):
-        return [90.0]
+        return [60.0]
 
     @variant
     def phase_max(self):
@@ -41,7 +41,7 @@ class VG(VariantGenerator):
     
     @variant
     def task_mode(self):
-        return [ '2_sin_gb','2_sin',  ]#  '2' ,'3', '4', '5', '2_sin', '5_sin'
+        return [ '2','2_sin',  ]#  '2' ,'3', '4', '5', '2_sin', '5_sin'
     @variant
     def max_time(self):
         return [ 10.0 ]
@@ -51,11 +51,11 @@ class VG(VariantGenerator):
         return [ 4,6 ]
  
 ssh_FLAG = True
-exp_id = 4
+exp_id = 5
 EXP_NAME ='GA_CPG'
 group_note ="************ABOUT THIS EXPERIMENT****************\n" \
             "测试所有环境是否可用!" \
-            "只针对snake测试!"
+            "只针对cellrobot测试!"
         #    "测试不同CPG权重对进化过程的影响[1 1 -1 -1 1] fitness 不同"
             
             

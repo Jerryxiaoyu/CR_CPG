@@ -146,7 +146,7 @@ class CPG_network(object):
         self.num_CPG = 14
         self.CPG_list =[]
         #self.w_ms_list = [ None,  1,1,1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1 ]
-        self.w_ms_list = [None, 1, 1, -1,- 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+        self.w_ms_list = [None, 1, 1, 1,- 1, -1, 1, 1, 1, 1, 1, 1, 1, 1]
         #self.w_ms_list =   [None, 1, -1, -1,  1, -1, 1, 1, 1, 1, 1, 1, 1, 1]
         self.master_list = [None, 0, 1, 1,  1,  1,  2,  2,  3,  3,  4,  4,  5,  5]
         

@@ -1,8 +1,8 @@
 import numpy as np
 #from CPG_core.quadruped_osc.oscillator_2_sin import oscillator_nw        #quaquepade
-from CPG_core.snake_osc.snake_oscillator_2 import oscillator_nw  #snake
-#from CPG_core.quadruped_osc.oscillator_2 import oscillator_nw
-#from CPG_core.butterfly_osc.butterfly_oscillator_5_sin import oscillator_nw
+#from CPG_core.snake_osc.snake_oscillator_2 import oscillator_nw  #snake
+from CPG_core.quadruped_osc.oscillator_2 import oscillator_nw
+#from CPG_core.butterfly_osc.butterfly_oscillator_2 import oscillator_nw
 
 #from CPG_core.bigdog2_osc.bigdog2_oscillator_2 import oscillator_nw
 
@@ -125,8 +125,20 @@ position_vector = [0.31544638304456235, 1.7942256384543018, -1.713145002305282, 
 position_vector =  [0.30238227791178307, 1.1461614367101216, -1.1009668751096093, -1.5169115611180701, -1.8219020876930485, 1.2807389283934758, -0.9905200642152812, -1.345306937709823, -0.9887565319242282, 1.865171249536699, -1.4414133701294753, 1.001722588596044, -1.444105228794247, 1.1120946935342784, -0.1491069940484817, 0.039526591164930736, -0.005272988742146323, -0.16279351777490336, -0.7039709413289968]
 
 
-env_name = 'CellrobotSnakeEnv-v0' #'CellrobotButterflyEnv-v0' #'Cellrobot2Env-v0'# 'CellrobotSnakeEnv-v0' CellrobotBigdog2Env-v0
-result=oscillator_nw(position_vector, max_time=10.0, fitness_option=4, plot = False, log_dis = False, render=False, env_name=env_name )
+position_vector = [0.3037153869307712, -1.831026296088937, 1.8232699279648958, 1.3053153514904179, 1.768985496932671, -0.7180584490555378, 1.9566794892643915, 1.9598222302151744, 1.3647911980281004, -0.46336015142891007, -0.13169961453427415, -1.552352087300293, 1.225019201806608, -0.9368818247951433, 1.2727098487077946, -0.6615126850827884, 0.23401790977331016, -0.29776970616265186, 0.09149472666471259]
+
+
+position_vector = [0.43609729974640543, -0.7528607337198577, -1.8047710377522845, -1.996824400308741, -1.811592995882378, -0.24239481619234882, -0.5983248390012719, -1.831026296088937, 1.431992852801427, -0.7238677269209725, 0.7990910415652013, 0.5998923587236762, -1.1413798257354149, -1.5236753567208003, 0.5885116869275904]
+
+
+position_vector = [0.1856221137684927, -0.3816949568616062, 1.2605349212908785, 1.4353877319910961, 1.3532871848903376, -1.40484810804218796,
+                                                            1.373117861916072, -0.234707494322539, 1.287829326469029, -0.5225381110861833,
+                                                            1.9905039649370306, -0.06669412912410921, 1.9671091896247979, -0.4448156229568161,
+                   
+                   
+                                    0.166202540603956, 0.5655342787806886, -0.5401414984839323, -0.5460350659448774, 0.6630564298889663, 0.168372134468058, -0.16387985540454952, -0.7336771337975638, -1.221130738512481, 0.29852261565871974, 0.012227863420083418, 0.5822469218091632, -0.8765527787413433]
+env_name = 'CellrobotEnv-v0' #'CellrobotButterflyEnv-v0' #'Cellrobot2Env-v0'# 'CellrobotSnakeEnv-v0' CellrobotBigdog2Env-v0
+result=oscillator_nw(position_vector, max_time=10.0, fitness_option=4, plot = False, log_dis = False, render=True, env_name=env_name )
 
 print('fitness = ', result['fitness'])
 print('x distance = ', result['x_distance'])
