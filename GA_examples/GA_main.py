@@ -84,6 +84,11 @@ elif env_name == 'CellrobotSnakeEnv-v0' or env_name == 'CellrobotSnake2Env-v0':
         particles_num = 37
         parm_list_key = ['gain', 'bias', 'phase', 'w']
         mutate_fun = MYmutGaussian
+    elif task_mode == '2_sin_gb':
+        from CPG_core.snake_osc.snake_oscillator_2_sin_gb import oscillator_nw
+        particles_num = 19
+        parm_list_key = ['gain', 'bias' ]
+        mutate_fun = tools.mutGaussian
     else:
         assert print('task mode does not exist')
 elif env_name == 'CellrobotButterflyEnv-v0'  :
