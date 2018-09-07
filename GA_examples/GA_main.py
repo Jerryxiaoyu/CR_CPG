@@ -16,7 +16,7 @@ from functools import partial
 
 parser = argparse.ArgumentParser(description='DeepPILCO')
 parser.add_argument('--seed', type=int, default=1)
-parser.add_argument('--env_name', type=str, default='CellrobotEnv-v0')  #  'CellrobotEnv-v0', 'Cellrobot2Env-v0','CellrobotSnakeEnv-v0' , 'CellrobotSnake2Env-v0','CellrobotButterflyEnv-v0'
+parser.add_argument('--env_name', type=str, default='CellrobotBigSnakeEnv-v0')  #  'CellrobotEnv-v0', 'Cellrobot2Env-v0','CellrobotSnakeEnv-v0' , 'CellrobotSnake2Env-v0','CellrobotButterflyEnv-v0'
 parser.add_argument('--pop_size', type=int, default=1) #
 parser.add_argument('--max_gen', type=int, default=3)
 parser.add_argument('--CXPB', type=float, default=0.8)
@@ -26,7 +26,7 @@ parser.add_argument('--gain_max', type=float, default=2.0)
 parser.add_argument('--bias_max', type=float, default=90.0) #angle
 parser.add_argument('--phase_max', type=float, default=45.0)  #angle
 
-parser.add_argument('--task_mode', type=str, default='5g' ) # 2, 3, 4, 5
+parser.add_argument('--task_mode', type=str, default='2_singb' ) # 2, 3, 4, 5
 parser.add_argument('--max_time', type=float, default=10.0 )
 parser.add_argument('--fitness_mode', type=int, default=6 )
 parser.add_argument('--exp_group_dir', type=str, default= None )
@@ -152,11 +152,14 @@ elif env_name == 'CellrobotBigSnakeEnv-v0':
         from CPG_core.snake_osc.bigsnake_oscillator_5_sin_gb import oscillator_nw
     
         particles_num = 33
-        parm_list_key = [  'phase', 'w']
+        parm_list_key = ['phase', 'w']
     
         mutate_fun = MYmutGaussian
-
-    
+    elif task_mode == '2_singb':
+        from CPG_core.snake_osc.bigsnake_oscillator_2_sin_gb import oscillator_nw
+        particles_num = 17
+        parm_list_key = ['gain' ]
+        mutate_fun = tools.mutGaussian
 else:
     assert print("env :{} task does not implemented.".format(args.env_name))
 
