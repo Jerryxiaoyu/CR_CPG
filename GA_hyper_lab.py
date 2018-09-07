@@ -9,7 +9,7 @@ class VG(VariantGenerator):
     
     @variant
     def env_name(self):
-        return ['CellrobotEnv-v0','Cellrobot2Env-v0', ]  #   'CellrobotEnv-v0' , 'Cellrobot2Env-v0', 'CellrobotSnakeEnv-v0'  , 'CellrobotSnake2Env-v0','CellrobotButterflyEnv-v0', 'CellrobotBigdog2Env-v0'
+        return ['CellrobotEnv-v0' ]  #   'CellrobotEnv-v0' , 'Cellrobot2Env-v0', 'CellrobotSnakeEnv-v0'  , 'CellrobotSnake2Env-v0','CellrobotButterflyEnv-v0', 'CellrobotBigdog2Env-v0'
     @variant
     def pop_size(self):
         return [300 ]
@@ -33,20 +33,22 @@ class VG(VariantGenerator):
     
     @variant
     def task_mode(self):
-        return [ '2' ,'2_sin', '5_sin',  '5'   ]#  '2' ,'3', '4', '5', '2_sin', '5_sin'
+        return [ '2'    ]#  '2' ,'3', '4', '5', '2_sin', '5_sin'
     @variant
     def max_time(self):
         return [ 10.0 ]
 
     @variant
     def fitness_mode(self):
-        return [6]
+        return [3,4,5,6]
  
     
-exp_id = 8
+exp_id = 1
 EXP_NAME ='GA_CPG'
 group_note ="************ABOUT THIS EXPERIMENT****************\n" \
-            "测试所有环境是否可用!"
+            "测试所有环境是否可用!" \
+            "测试不同fitness 对cellrobot的影响"
+            
             
 variants = VG().variants()
 num=0
