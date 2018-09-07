@@ -25,10 +25,10 @@ from fitness import calc_fitness
 from gait_eval_result import GaitEvalResult
 
 
-from CPG_core.controllers.CPG_controller_quadruped_sin import CPG_network
+from CPG_core.CPG_controller import CPG_network, CPG_network5g
 
 
-def oscillator_nw(position_vector, max_time=10.0, fitness_option=6, plot = False, log_dis = False, render = False, monitor_path=None, save_plot_path = None, env_name=None):
+def oscillator_nw(position_vector, max_time=10.0, fitness_option=6, plot = False, log_dis = False, render = False, monitor_path=None, save_plot_path = None, env_name =None):
     
     if log_dis:
         log.infov('[OSC]-------------------------------------------------------------')
@@ -40,13 +40,12 @@ def oscillator_nw(position_vector, max_time=10.0, fitness_option=6, plot = False
         log.info('[OSC] Started monitoring thread')
         
     # Start the monitoring thread
-    if env_name is None:
+    if env_name is  None:
         env = gym.make('CellrobotEnv-v0')
     else:
         env = gym.make(env_name)
-        # print(env.env.spec.id)
+   # print(env.env.spec.id)
     CPG_node_num = 13
-    
 
     # For plots - not needed now
     if plot:
@@ -70,7 +69,7 @@ def oscillator_nw(position_vector, max_time=10.0, fitness_option=6, plot = False
         t_list = list()
 
  
-    CPG_controller  = CPG_network( position_vector)
+    CPG_controller  = CPG_network5g(CPG_node_num, position_vector)
     
     # Set monitor thread
     monitor_thread = RobotMonitorThread(env, render, monitor_path=monitor_path)
@@ -82,16 +81,18 @@ def oscillator_nw(position_vector, max_time=10.0, fitness_option=6, plot = False
     start_pos_x = monitor_thread.x
     start_pos_y = monitor_thread.y
     start_pos_z = monitor_thread.z
-    
+
+    initial_bias_angles = {'cell0': position_vector[14], 'cell1': position_vector[15], 'cell2': position_vector[16],
+                           'cell3': position_vector[17],
+                           'cell4': position_vector[18],
+                           'cell5': position_vector[19], 'cell6': position_vector[20], 'cell7': position_vector[21],
+                           'cell8': position_vector[22],
+                           'cell9': position_vector[23],
+                           'cell10': position_vector[24], 'cell11': position_vector[25], 'cell12': position_vector[26]
+                           }
     # Start the monitoring thread
     monitor_thread.start()
-    # Set the joint positions
-    initial_bias_angles = {'cell0': position_vector[14], 'cell1': position_vector[15], 'cell2': position_vector[16], 'cell3': position_vector[17],
-                      'cell4': position_vector[18],
-                      'cell5': position_vector[19], 'cell6': position_vector[20], 'cell7': position_vector[21], 'cell8': position_vector[22],
-                      'cell9': position_vector[23],
-                      'cell10': position_vector[24], 'cell11': position_vector[25], 'cell12': position_vector[26]
-                      }
+    
     # Set init angles
     robot_handle.set_angles_slow(target_angles=initial_bias_angles, duration=2.0, step=0.01)
 
@@ -284,12 +285,12 @@ def oscillator_nw(position_vector, max_time=10.0, fitness_option=6, plot = False
             'var_torso_beta': var_torso_beta,
             'var_torso_gamma': var_torso_gamma}
     #return fitness
-# #
-# position_vector = np.zeros(40)
+# # #
+# position_vector = np.zeros(43)
 # position_vector[0]=1
 # for i in range(1,14):
 #     position_vector[i] = 1
 #
 # oscillator_nw(position_vector, plot=True,render=True, monitor_path=None, #'/home/drl/PycharmProjects/DeployedProjects/CR_CPG/tmp/tmp2.mp4'
-#               save_plot_path='/home/drl/PycharmProjects/DeployedProjects/CR_CPG/tmp/tmp2.jpg') #'/home/drl/PycharmProjects/DeployedProjects/CR_CPG/tmp/tmp.mp4'
+#               save_plot_path=None) #'/home/drl/PycharmProjects/DeployedProjects/CR_CPG/tmp/tmp.mp4'
 

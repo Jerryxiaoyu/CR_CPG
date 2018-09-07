@@ -81,7 +81,11 @@ class RobotMonitorThread(Thread):
             self.obs_high = self.obs_low + 17
     
             self.height_threshold = 0.10
-
+        elif env.env.spec.id == 'CellrobotBigSnakeEnv-v0':
+            self.obs_low = 6
+            self.obs_high = self.obs_low + 16
+    
+            self.height_threshold = 0.0
         else:
             assert 'ENV error!'
  

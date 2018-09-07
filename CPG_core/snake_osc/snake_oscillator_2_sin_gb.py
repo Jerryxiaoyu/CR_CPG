@@ -258,11 +258,11 @@ def oscillator_nw(position_vector, max_time=10.0, fitness_option=6, plot = False
             'var_torso_gamma': var_torso_gamma}
     #return fitness
 #
-# # #
+# #
 # position_vector = np.zeros(19)
 # position_vector[0]=1
 # for i in range(1,10):
-#     position_vector[i] = 1
+#     position_vector[i] =0.5
 #
 # print(position_vector)
 #

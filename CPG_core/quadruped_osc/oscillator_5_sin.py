@@ -81,15 +81,23 @@ def oscillator_nw(position_vector, max_time=10.0, fitness_option=6, plot = False
     start_pos_x = monitor_thread.x
     start_pos_y = monitor_thread.y
     start_pos_z = monitor_thread.z
-    
+
+    initial_bias_angles = {'cell0': position_vector[14], 'cell1': position_vector[15], 'cell2': position_vector[16],
+                           'cell3': position_vector[17],
+                           'cell4': position_vector[18],
+                           'cell5': position_vector[19], 'cell6': position_vector[20], 'cell7': position_vector[21],
+                           'cell8': position_vector[22],
+                           'cell9': position_vector[23],
+                           'cell10': position_vector[24], 'cell11': position_vector[25], 'cell12': position_vector[26]
+                           }
     # Start the monitoring thread
     monitor_thread.start()
     
     # Set init angles
-   # robot_handle.set_angles_slow(target_angles=initial_bias_angles, duration=2.0, step=0.01)
+    robot_handle.set_angles_slow(target_angles=initial_bias_angles, duration=2.0, step=0.01)
 
     # Sleep for 2 seconds to let any oscillations to die down
-    #time.sleep(2.0)
+    time.sleep(2.0)
 
     # Reset the timer of the monitor
     monitor_thread.reset_timer()
@@ -277,7 +285,7 @@ def oscillator_nw(position_vector, max_time=10.0, fitness_option=6, plot = False
             'var_torso_beta': var_torso_beta,
             'var_torso_gamma': var_torso_gamma}
     #return fitness
-#
+# #
 # position_vector = np.zeros(53)
 # position_vector[0]=1
 # for i in range(1,14):

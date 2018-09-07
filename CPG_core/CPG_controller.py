@@ -184,5 +184,52 @@ class CPG_network(object):
             output_list.append(cpg_n.parm['o'])
         
         return output_list
+
+ 
+
+
+class CPG_network5g(object):
+    def __init__(self, CPG_node_num, position_vector):
         
+        self.CPG_node_num = CPG_node_num  # 不包括placemarker
+        
+        if len(position_vector) != self.CPG_node_num * 4 + 1:
+            assert "Position vector out of range!"
+        
+        GAIN, BIAS, PHASE, WEIGHT = [], [], [], []
+        
+        for i in range(self.CPG_node_num):
+            GAIN.append(position_vector[i + 1])
+            BIAS.append(0)
+            PHASE.append(position_vector[self.CPG_node_num+ 1])
+            WEIGHT.append(position_vector[self.CPG_node_num*2 + i + 1])
+        
+        self.parm_list = {
+            0: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0],
+        }
+        for i in range(self.CPG_node_num):
+            parm = {i + 1: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0,0.0, GAIN[i], BIAS[i], PHASE[i]]}
+            self.parm_list.update(parm)
+        
+        self.kf = position_vector[0]
+        self.num_CPG = len(self.parm_list)
+        self.CPG_list = []
+        self.w_ms_list = [None, WEIGHT[0], WEIGHT[1], WEIGHT[2], WEIGHT[3], WEIGHT[4], WEIGHT[5], WEIGHT[6], WEIGHT[7],
+                          WEIGHT[8], WEIGHT[9], WEIGHT[10], WEIGHT[11], WEIGHT[12], ]
+        self.master_list = [None, 0, 1, 1, 1, 1, 2, 2, 3, 3, 4, 4, 5, 5]
+
+        for i in range(self.num_CPG):
+            if i == 0:
+                self.CPG_list.append(CPG_neutron(0, master_nuron=None, param=self.parm_list[0], kf=self.kf, w_ms=0))
+            else:
+                self.CPG_list.append(CPG_neutron(1, master_nuron=self.CPG_list[self.master_list[i]],
+                                                 param=self.parm_list[i], kf=self.kf, w_ms=self.w_ms_list[i]))
+    
+    def output(self, state):
+        output_list = []
+        for cpg_n in self.CPG_list:
+            cpg_n.next_output(f1=0, f2=0)
+            output_list.append(cpg_n.parm['o'])
+        
+        return output_list
        

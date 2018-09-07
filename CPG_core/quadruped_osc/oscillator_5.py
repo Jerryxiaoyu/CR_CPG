@@ -163,7 +163,7 @@ def oscillator_nw(position_vector, max_time=10.0, fitness_option=6, plot = False
     monitor_thread.start()
     
     # Set init angles
-    #robot_handle.set_angles_slow(target_angles=initial_bias_angles, duration=5.0, step=0.01)
+    robot_handle.set_angles_slow(target_angles=initial_bias_angles, duration=5.0, step=0.01)
 
     # Sleep for 2 seconds to let any oscillations to die down
     time.sleep(2.0)
@@ -475,7 +475,7 @@ def oscillator_nw(position_vector, max_time=10.0, fitness_option=6, plot = False
             'var_torso_beta': var_torso_beta,
             'var_torso_gamma': var_torso_gamma}
     #return fitness
-#
+
 # position_vector = np.zeros(27)
 # position_vector[0]=1
 # for i in range(1,14):

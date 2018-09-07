@@ -24,11 +24,12 @@ from CPG_core.CPG_osillator import matsuoka_oscillator
 from fitness import calc_fitness
 from gait_eval_result import GaitEvalResult
 
+from math import pi, cos, sin
+from CPG_core.controllers.CPG_controller_bigsnake_sin import CPG_network_2gb
 
-from CPG_core.controllers.CPG_controller_quadruped_sin import CPG_network
 
-
-def oscillator_nw(position_vector, max_time=10.0, fitness_option=6, plot = False, log_dis = False, render = False, monitor_path=None, save_plot_path = None, env_name=None):
+def oscillator_nw(position_vector, max_time=10.0, fitness_option=6, plot = False, log_dis = False, render = False, monitor_path=None, save_plot_path = None, env_name=None
+                  ):
     
     if log_dis:
         log.infov('[OSC]-------------------------------------------------------------')
@@ -40,13 +41,12 @@ def oscillator_nw(position_vector, max_time=10.0, fitness_option=6, plot = False
         log.info('[OSC] Started monitoring thread')
         
     # Start the monitoring thread
+    # Start the monitoring thread
     if env_name is None:
-        env = gym.make('CellrobotEnv-v0')
+        env = gym.make('CellrobotBigSnakeEnv-v0')
     else:
         env = gym.make(env_name)
-        # print(env.env.spec.id)
-    CPG_node_num = 13
-    
+    CPG_node_num =16
 
     # For plots - not needed now
     if plot:
@@ -59,18 +59,13 @@ def oscillator_nw(position_vector, max_time=10.0, fitness_option=6, plot = False
         o7_list = list()
         o8_list = list()
         o9_list = list()
-        o10_list = list()
-        o11_list = list()
-        o12_list = list()
-        o13_list = list()
-
         end_pos_x_list = list()
         end_pos_y_list = list()
         end_pos_z_list = list()
         t_list = list()
 
  
-    CPG_controller  = CPG_network( position_vector)
+    CPG_controller  = CPG_network_2gb(CPG_node_num, position_vector)
     
     # Set monitor thread
     monitor_thread = RobotMonitorThread(env, render, monitor_path=monitor_path)
@@ -85,18 +80,12 @@ def oscillator_nw(position_vector, max_time=10.0, fitness_option=6, plot = False
     
     # Start the monitoring thread
     monitor_thread.start()
-    # Set the joint positions
-    initial_bias_angles = {'cell0': position_vector[14], 'cell1': position_vector[15], 'cell2': position_vector[16], 'cell3': position_vector[17],
-                      'cell4': position_vector[18],
-                      'cell5': position_vector[19], 'cell6': position_vector[20], 'cell7': position_vector[21], 'cell8': position_vector[22],
-                      'cell9': position_vector[23],
-                      'cell10': position_vector[24], 'cell11': position_vector[25], 'cell12': position_vector[26]
-                      }
+    
     # Set init angles
-    robot_handle.set_angles_slow(target_angles=initial_bias_angles, duration=2.0, step=0.01)
+   # robot_handle.set_angles_slow(target_angles=initial_bias_angles, duration=2.0, step=0.01)
 
     # Sleep for 2 seconds to let any oscillations to die down
-    time.sleep(2.0)
+    #time.sleep(2.0)
 
     # Reset the timer of the monitor
     monitor_thread.reset_timer()
@@ -113,10 +102,13 @@ def oscillator_nw(position_vector, max_time=10.0, fitness_option=6, plot = False
         output_list = CPG_controller.output(state=None)
 
         # Set the joint positions
-        current_angles = {'cell0':output_list[1], 'cell1':output_list[2],'cell2':output_list[3],'cell3':output_list[4],'cell4':output_list[5],
-                        'cell5':output_list[6], 'cell6':output_list[7],'cell7':output_list[8],'cell8':output_list[9],'cell9':output_list[10],
-                        'cell10':output_list[11], 'cell11':output_list[12],'cell12':output_list[13]
-                       }
+        current_angles = {'cell0': output_list[1], 'cell1': output_list[2], 'cell2': output_list[3],
+                          'cell3': output_list[4], 'cell4': output_list[5],
+                          'cell5': output_list[6], 'cell6': output_list[7], 'cell7': output_list[8],
+                          'cell8': output_list[9], 'cell9': output_list[10], 'cell10': output_list[11],
+                          'cell11': output_list[12], 'cell12': output_list[13], 'cell13': output_list[14],
+                          'cell14': output_list[15], 'cell15': output_list[16]
+                          }
         robot_handle.set_angles(current_angles)
 
         time.sleep(dt)
@@ -136,11 +128,6 @@ def oscillator_nw(position_vector, max_time=10.0, fitness_option=6, plot = False
             o7_list.append(output_list[7])
             o8_list.append(output_list[8])
             o9_list.append(output_list[9])
-            o10_list.append(output_list[10])
-            o11_list.append(output_list[11])
-            o12_list.append(output_list[12])
-            o13_list.append(output_list[13])
-
             end_pos_x_list.append(monitor_thread.x)
             end_pos_y_list.append(monitor_thread.y)
             end_pos_z_list.append(monitor_thread.z)
@@ -232,21 +219,9 @@ def oscillator_nw(position_vector, max_time=10.0, fitness_option=6, plot = False
         plt.grid()
         plt.legend()
     
-        ax5 = plt.subplot(615, sharex=ax1, sharey=ax1)
-        plt.plot(t_list, o1_list, color='red', label='o_1')
-        plt.plot(t_list, o10_list, color='orange', ls='--', label='o_10')
-        plt.plot(t_list, o11_list, color='orange', label='o_11')
-        plt.grid()
-        plt.legend()
-    
-        ax6 = plt.subplot(616, sharex=ax1, sharey=ax1)
-        plt.plot(t_list, o1_list, color='red', label='o_1')
-        plt.plot(t_list, o12_list, color='brown', ls='--', label='o_12')
-        plt.plot(t_list, o13_list, color='brown', label='o_13')
-        plt.grid()
-        plt.legend()
+       
         if save_plot_path is not None:
-            plt.savefig(save_plot_path)
+            plt.savefig(save_plot_path+'/fig1.jpg')
         else:
             plt.show()
 
@@ -268,7 +243,7 @@ def oscillator_nw(position_vector, max_time=10.0, fitness_option=6, plot = False
         plt.grid()
         plt.legend()
         if save_plot_path is not None:
-            plt.savefig(save_plot_path + '/fig1.jpg')
+            plt.savefig(save_plot_path+'/fig1.jpg')
         else:
             plt.show()
 
@@ -284,12 +259,14 @@ def oscillator_nw(position_vector, max_time=10.0, fitness_option=6, plot = False
             'var_torso_beta': var_torso_beta,
             'var_torso_gamma': var_torso_gamma}
     #return fitness
-# #
-# position_vector = np.zeros(40)
+#
+# # #
+# position_vector = np.zeros(33)
 # position_vector[0]=1
-# for i in range(1,14):
-#     position_vector[i] = 1
+# for i in range(1,17):
+#     position_vector[i] =0.3
+#
+# print(position_vector)
 #
 # oscillator_nw(position_vector, plot=True,render=True, monitor_path=None, #'/home/drl/PycharmProjects/DeployedProjects/CR_CPG/tmp/tmp2.mp4'
-#               save_plot_path='/home/drl/PycharmProjects/DeployedProjects/CR_CPG/tmp/tmp2.jpg') #'/home/drl/PycharmProjects/DeployedProjects/CR_CPG/tmp/tmp.mp4'
-
+#               save_plot_path=None) #'/home/drl/PycharmProjects/DeployedProjects/CR_CPG/tmp/tmp.mp4'

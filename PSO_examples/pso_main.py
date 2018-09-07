@@ -32,15 +32,15 @@ creator.create("Particle", list, fitness=creator.FitnessMax, speed=list,
 
 parser = argparse.ArgumentParser(description='DeepPILCO')
 parser.add_argument('--seed', type=int, default=1)
-parser.add_argument('--env_name', type=str, default= 'CellrobotSnakeEnv-v0')  #  'CellrobotEnv-v0','Cellrobot2Env-v0','CellrobotSnakeEnv-v0' , 'CellrobotSnake2Env-v0','CellrobotButterflyEnv-v0'
+parser.add_argument('--env_name', type=str, default= 'CellrobotBigSnakeEnv-v0')  #  'CellrobotEnv-v0','Cellrobot2Env-v0','CellrobotSnakeEnv-v0' , 'CellrobotSnake2Env-v0','CellrobotButterflyEnv-v0'
 parser.add_argument('--pop_size', type=int, default=8)   # 32
-parser.add_argument('--max_gen', type=int, default=2 )  #1000
+parser.add_argument('--max_gen', type=int, default=1 )  #1000
 parser.add_argument('--phi1', type=float, default=2.0)
 parser.add_argument('--phi2', type=float, default=2.0)
 parser.add_argument('--gain_max', type=float, default=2.0)
 parser.add_argument('--speed_max', type=float, default=2.0)
 
-parser.add_argument('--task_mode', type=str, default='2' ) # 2, 3, 4, 5
+parser.add_argument('--task_mode', type=str, default='2_singb' ) # 2, 3, 4, 5
 parser.add_argument('--max_time', type=float, default=10.0 )
 parser.add_argument('--fitness_mode', type=int, default=6 )
 parser.add_argument('--exp_group_dir', type=str, default= None )
@@ -94,6 +94,16 @@ elif env_name == 'CellrobotButterflyEnv-v0'  :
         particles_num = 29
     else:
         assert 'task mode does not exist'
+
+elif env_name == 'CellrobotBigSnakeEnv-v0':
+    
+    if task_mode == '2_singb':
+        from CPG_core.snake_osc.bigsnake_oscillator_2_sin_gb import oscillator_nw
+        
+        particles_num = 33
+        
+        
+        
 else:
     assert "env :{} task does not implemented.".format(args.env_name)
 
@@ -124,7 +134,7 @@ def parmeter_generate(pmin,pmax):
  
     return parm_list
 
-def generate(size, pmin, pmax, smin, smax):
+def generate(size, pmin, pmax, smin, smax, ):
     part = creator.Particle(parmeter_generate(pmin, pmax))
     part.speed = [random.uniform(smin, smax) for _ in range(size)]
     part.smin = smin
