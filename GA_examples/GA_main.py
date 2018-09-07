@@ -162,7 +162,7 @@ log.info('ENV : {}'.format(env_name) )
 log.info('*********************************************')
 log.infov('[GA] Running ga_2')
 log.infov('[GA] Creating position bounds')
-FLT_MIN_KF,    FLT_MAX_KF    = 0.2, 1.0
+FLT_MIN_KF,    FLT_MAX_KF    = 0, 1.0
 FLT_MIN_GAIN, FLT_MAX_GAIN = -1 *args.gain_max, 1 *args.gain_max
 FLT_MIN_BIAS, FLT_MAX_BIAS = -math.radians(90), math.radians(90)
 FLT_MIN_PHASE, FLT_MAX_PHASE = -math.radians(180), math.radians(180)
