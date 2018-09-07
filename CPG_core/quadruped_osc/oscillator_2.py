@@ -459,10 +459,10 @@ def oscillator_nw(position_vector, max_time=10.0, fitness_option=6, plot = False
             'var_torso_gamma': var_torso_gamma}
     #return fitness
 #
-position_vector = np.zeros(27)
-position_vector[0]=1
-for i in range(1,14):
-    position_vector[i] = 1
-
-oscillator_nw(position_vector, plot=True,render=True, monitor_path=None, #'/home/drl/PycharmProjects/DeployedProjects/CR_CPG/tmp/tmp2.mp4'
-              save_plot_path='/home/drl/PycharmProjects/DeployedProjects/CR_CPG/tmp/tmp2.jpg') #'/home/drl/PycharmProjects/DeployedProjects/CR_CPG/tmp/tmp.mp4'
+# position_vector = np.zeros(27)
+# position_vector[0]=1
+# for i in range(1,14):
+#     position_vector[i] = 1
+#
+# oscillator_nw(position_vector, plot=True,render=True, monitor_path=None, #'/home/drl/PycharmProjects/DeployedProjects/CR_CPG/tmp/tmp2.mp4'
+#               save_plot_path='/home/drl/PycharmProjects/DeployedProjects/CR_CPG/tmp/tmp2.jpg') #'/home/drl/PycharmProjects/DeployedProjects/CR_CPG/tmp/tmp.mp4'
