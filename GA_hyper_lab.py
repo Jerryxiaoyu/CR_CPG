@@ -9,10 +9,10 @@ class VG(VariantGenerator):
     
     @variant
     def env_name(self):
-        return ['CellrobotSnakeEnv-v0'  , 'CellrobotSnake2Env-v0'  ]  #   'CellrobotEnv-v0' , 'Cellrobot2Env-v0', 'CellrobotSnakeEnv-v0'  , 'CellrobotSnake2Env-v0','CellrobotButterflyEnv-v0', 'CellrobotBigdog2Env-v0'
+        return ['CellrobotSnakeEnv-v0','CellrobotSnake2Env-v0'     ]  #   'CellrobotEnv-v0' , 'Cellrobot2Env-v0', 'CellrobotSnakeEnv-v0'  , 'CellrobotSnake2Env-v0','CellrobotButterflyEnv-v0', 'CellrobotBigdog2Env-v0'
     @variant
     def pop_size(self):
-        return [300 ]
+        return [300]
     
     
     @variant
@@ -29,11 +29,19 @@ class VG(VariantGenerator):
 
     @variant
     def gain_max(self):
-        return [2.0 ]
+        return [1.0 ]
+
+    @variant
+    def bias_max(self):
+        return [90.0]
+
+    @variant
+    def phase_max(self):
+        return [90.0]
     
     @variant
     def task_mode(self):
-        return [ '2_sin' ]#  '2' ,'3', '4', '5', '2_sin', '5_sin'
+        return [ '2_sin_gb','2_sin',  ]#  '2' ,'3', '4', '5', '2_sin', '5_sin'
     @variant
     def max_time(self):
         return [ 10.0 ]
@@ -42,7 +50,7 @@ class VG(VariantGenerator):
     def fitness_mode(self):
         return [ 4,6 ]
  
-    
+ssh_FLAG = True
 exp_id = 4
 EXP_NAME ='GA_CPG'
 group_note ="************ABOUT THIS EXPERIMENT****************\n" \
@@ -110,6 +118,9 @@ for v in variants:
     task_mode = v['task_mode']
     max_time = v['max_time']
     fitness_mode = v['fitness_mode']
+    bias_max = v['bias_max']
+    phase_max = v['phase_max']
+    
 
     os.system("python3 -m scoop GA_examples/GA_main.py " +
               " --seed " + str(seed) +
@@ -122,11 +133,13 @@ for v in variants:
               " --task_mode " + str(task_mode) +
               " --max_time " + str(max_time) +
               " --fitness_mode " + str(fitness_mode) +
+              " --phase_max " + str(phase_max) +
+              " --bias_max " + str(bias_max) +
               " --exp_group_dir " + str(exp_group_dir)
               )
-
-    local_dir = os.path.abspath(group_dir)
-    remote_dir = '/home/drl/PycharmProjects/DeployedProjects/CR_CPG/Hyper_lab/log-files/AWS_logfiles/'+exp_group_dir+'/'
-    ssh.upload(local_dir, remote_dir, hostname=hostname , port=port , username=username ,
-               pkey_path=key_path)
+    if ssh_FLAG:
+        local_dir = os.path.abspath(group_dir)
+        remote_dir = '/home/drl/PycharmProjects/DeployedProjects/CR_CPG/Hyper_lab/log-files/AWS_logfiles/'+exp_group_dir+'/'
+        ssh.upload(local_dir, remote_dir, hostname=hostname , port=port , username=username ,
+                   pkey_path=key_path)
      

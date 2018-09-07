@@ -21,7 +21,10 @@ parser.add_argument('--pop_size', type=int, default=1) #
 parser.add_argument('--max_gen', type=int, default=3)
 parser.add_argument('--CXPB', type=float, default=0.8)
 parser.add_argument('--MUTPB', type=float, default=0.1)
+
 parser.add_argument('--gain_max', type=float, default=2.0)
+parser.add_argument('--bias_max', type=float, default=90.0) #angle
+parser.add_argument('--phase_max', type=float, default=45.0)  #angle
 
 parser.add_argument('--task_mode', type=str, default='2' ) # 2, 3, 4, 5
 parser.add_argument('--max_time', type=float, default=10.0 )
@@ -167,14 +170,21 @@ log.info('ENV : {}'.format(env_name) )
 log.info('*********************************************')
 log.infov('[GA] Running ga_2')
 log.infov('[GA] Creating position bounds')
+
+gain_max = args.gain_max
+bias_max = args.bias_max
+phase_max = args.phase_max
+
+
+
 FLT_MIN_KF,    FLT_MAX_KF    = 0, 1.0
-FLT_MIN_GAIN, FLT_MAX_GAIN = -1 *args.gain_max, 1 *args.gain_max
-FLT_MIN_BIAS, FLT_MAX_BIAS = -math.radians(90), math.radians(90)
-FLT_MIN_PHASE, FLT_MAX_PHASE = -math.radians(180), math.radians(180)
+FLT_MIN_GAIN, FLT_MAX_GAIN = -1 *gain_max, 1 *gain_max
+FLT_MIN_BIAS, FLT_MAX_BIAS = -math.radians( bias_max), math.radians(bias_max)
+FLT_MIN_PHASE, FLT_MAX_PHASE = -math.radians( phase_max), math.radians( phase_max)
 KEY_RANGE ={
-    'gain': [-1 *args.gain_max, 1 *args.gain_max],
-    'bias': [-math.radians(90), math.radians(90)],
-    'phase':[-math.radians(180), math.radians(180)],
+    'gain': [-1 * gain_max, 1 * gain_max],
+    'bias': [-math.radians(bias_max), math.radians(bias_max)],
+    'phase':[-math.radians(phase_max), math.radians(phase_max)],
     'w':   [-1,1]
 }
 
