@@ -1,6 +1,8 @@
 from utils.instrument import VariantGenerator, variant, IO
 import os
 from datetime import datetime
+import paramiko
+import utils.ssh as ssh
 class VG(VariantGenerator):
     
     @variant
@@ -24,10 +26,19 @@ class VG(VariantGenerator):
 
     @variant
     def gain_max(self):
-        return [2.0 ]
+        return [1.0 ]
+
+    @variant
+    def bias_max(self):
+        return [0.0]
+
+    @variant
+    def phase_max(self):
+        return [90.0]
+    
     @variant
     def speed_max(self):
-        return [ 2.0  ]
+        return [ 0.5,2  ]
 
     @variant
     def task_mode(self):
@@ -38,9 +49,10 @@ class VG(VariantGenerator):
 
     @variant
     def fitness_mode(self):
-        return [6]
- 
-    
+        return [4 ]
+
+
+ssh_FLAG = True
 exp_id = 1
 EXP_NAME ='PSO_CPG'
 group_note ="************ABOUT THIS EXPERIMENT****************\n" \
@@ -79,6 +91,14 @@ num_exp =0
 
 seed =1
 
+
+# SSH Config
+hostname = '2402:f000:6:3801:2d55:548f:d03c:ccad'#'2600:1f16:e7a:a088:805d:16d6:f387:62e5'
+username = 'drl'
+key_path = '/home/ubuntu/.ssh/id_rsa_dl'
+
+port = 22
+
 for v in variants:
     num_exp += 1
     print(v)
@@ -93,6 +113,8 @@ for v in variants:
     task_mode = v['task_mode']
     max_time = v['max_time']
     fitness_mode = v['fitness_mode']
+    bias_max = v['bias_max']
+    phase_max = v['phase_max']
 
     os.system("python3 -m scoop PSO_examples/pso_main.py " +
               " --seed " + str(seed) +
@@ -105,8 +127,14 @@ for v in variants:
               " --speed_max " + str(speed_max) +
               " --task_mode " + str(task_mode) +
               " --max_time " + str(max_time) +
+              " --phase_max " + str(phase_max) +
+              " --bias_max " + str(bias_max) +
               " --fitness_mode " + str(fitness_mode) +
               " --exp_group_dir " + str(exp_group_dir)
 
               )
-     
+    if ssh_FLAG:
+        local_dir = os.path.abspath(group_dir)
+        remote_dir = '/home/drl/PycharmProjects/DeployedProjects/CR_CPG/Hyper_lab/log-files/AWS_logfiles/'+exp_group_dir+'/'
+        ssh.upload(local_dir, remote_dir, hostname=hostname , port=port , username=username ,
+                   pkey_path=key_path)

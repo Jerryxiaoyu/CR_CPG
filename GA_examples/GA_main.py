@@ -185,10 +185,19 @@ logger = LoggerCsv(log_dir, csvname='log_results')
 results_IO = IO(os.path.join(log_dir, 'results.pkl'))
 args_IO = IO(os.path.join(log_dir, 'args.pkl')).to_pickle(args)
 
+
+gain_max = args.gain_max
+bias_max = args.bias_max
+phase_max = args.phase_max
+
 # Create the position bounds of the individual
 log.info('[System] parmeters: {}'.format(args))
 log.info('*********************************************')
-log.info('ENV : {}               task_mode: {}'.format(env_name, task_mode) )
+log.info('ENV : {}     task_mode: {}'.format(env_name, task_mode) )
+log.info('ENV : {}     fitness: {}'.format(env_name, args.fitness_mode) )
+log.info('ENV : {}     gain_max: {}'.format(env_name, gain_max) )
+log.info('ENV : {}     bias_max: {}'.format(env_name, bias_max ) )
+log.info('ENV : {}     phase_max: {}'.format(env_name, phase_max) )
 log.info('particles_num : {}   '.format(particles_num ) )
 log.info('ENV : {}'.format(env_name) )
 
@@ -196,9 +205,6 @@ log.info('*********************************************')
 log.infov('[GA] Running ga_2')
 log.infov('[GA] Creating position bounds')
 
-gain_max = args.gain_max
-bias_max = args.bias_max
-phase_max = args.phase_max
 
 
 
