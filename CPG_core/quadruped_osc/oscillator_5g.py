@@ -82,13 +82,13 @@ def oscillator_nw(position_vector, max_time=10.0, fitness_option=6, plot = False
     start_pos_y = monitor_thread.y
     start_pos_z = monitor_thread.z
 
-    initial_bias_angles = {'cell0': position_vector[14], 'cell1': position_vector[15], 'cell2': position_vector[16],
-                           'cell3': position_vector[17],
-                           'cell4': position_vector[18],
-                           'cell5': position_vector[19], 'cell6': position_vector[20], 'cell7': position_vector[21],
-                           'cell8': position_vector[22],
-                           'cell9': position_vector[23],
-                           'cell10': position_vector[24], 'cell11': position_vector[25], 'cell12': position_vector[26]
+    initial_bias_angles = {'cell0': 0, 'cell1': 0, 'cell2': 0,
+                           'cell3': 0,
+                           'cell4': 0,
+                           'cell5': 0, 'cell6': 0, 'cell7': 0,
+                           'cell8': 0,
+                           'cell9': 0,
+                           'cell10': 0, 'cell11': 0, 'cell12': 0
                            }
     # Start the monitoring thread
     monitor_thread.start()
