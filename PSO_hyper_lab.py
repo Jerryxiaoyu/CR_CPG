@@ -42,18 +42,18 @@ class VG(VariantGenerator):
 
     @variant
     def task_mode(self):
-        return ['2_sin' ]#'3', '4', '5','2' , '2_sin', '5_sin'
+        return [  '2','2_sin', '5_sin']#'3', '4', '5','2' , '2_sin', '5_sin'
     @variant
     def max_time(self):
         return [ 10.0 ]
 
     @variant
     def fitness_mode(self):
-        return [4 ]
+        return [4, 6]
 
 
 ssh_FLAG = True
-exp_id = 1
+exp_id = 2
 EXP_NAME ='PSO_CPG'
 group_note ="************ABOUT THIS EXPERIMENT****************\n" \
             "测试所有环境是否可用!"
