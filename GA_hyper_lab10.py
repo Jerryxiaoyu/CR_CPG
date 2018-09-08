@@ -29,7 +29,7 @@ class VG(VariantGenerator):
 
     @variant
     def gain_max(self):
-        return [ 1,2  ]
+        return [ 1  ]
 
     @variant
     def bias_max(self):
@@ -41,7 +41,7 @@ class VG(VariantGenerator):
     
     @variant
     def task_mode(self):
-        return [ '2', '2_sin',   '5_sin' ]#  '2' ,'3', '4', '5', '2_sin', '5_sin'
+        return [ '2', '2_sin', '2_sin_gb', '5_sin' ]#  '2' ,'3', '4', '5', '2_sin', '5_sin'
     @variant
     def max_time(self):
         return [ 10.0 ]
@@ -51,7 +51,7 @@ class VG(VariantGenerator):
         return [  4  ]
  
 ssh_FLAG = True
-exp_id = 11
+exp_id = 10
 EXP_NAME ='GA_CPG'
 group_note ="************ABOUT THIS EXPERIMENT****************\n" \
             "测试所有环境是否可用!" \

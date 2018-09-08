@@ -9,27 +9,26 @@ class VG(VariantGenerator):
     
     @variant
     def env_name(self):
-        return ['CellrobotBigdog2Env-v0' ]  #   'CellrobotEnv-v0' , 'Cellrobot2Env-v0', 'CellrobotSnakeEnv-v0'  , 'CellrobotSnake2Env-v0','CellrobotButterflyEnv-v0', 'CellrobotBigdog2Env-v0'
+        return [ 'CellrobotEnv-v0' ]  # 'CellrobotSnakeEnv-v0' 'Cellrobot2Env-v0','CellrobotSnakeEnv-v0' , 'CellrobotSnake2Env-v0','CellrobotButterflyEnv-v0'
     @variant
     def pop_size(self):
-        return [300]
-  
+        return [35]
     
     @variant
     def max_gen(self):
-        return [ 40 ]
+        return [ 500 ]
 
     @variant
-    def CXPB(self):
-        return [0.8]
+    def phi1(self):
+        return [2.0]
     
     @variant
-    def MUTPB(self):
-        return [ 0.1 ]
+    def phi2(self):
+        return [ 2.0 ]
 
     @variant
     def gain_max(self):
-        return [ 1,2  ]
+        return [1.0 ]
 
     @variant
     def bias_max(self):
@@ -37,27 +36,29 @@ class VG(VariantGenerator):
 
     @variant
     def phase_max(self):
-        return [90.0 ]
+        return [90.0]
     
     @variant
+    def speed_max(self):
+        return [ 0.5,2  ]
+
+    @variant
     def task_mode(self):
-        return [ '2', '2_sin',   '5_sin' ]#  '2' ,'3', '4', '5', '2_sin', '5_sin'
+        return [  '2','2_sin', '5_sin']#'3', '4', '5','2' , '2_sin', '5_sin'
     @variant
     def max_time(self):
         return [ 10.0 ]
 
     @variant
     def fitness_mode(self):
-        return [  4  ]
- 
+        return [4, 6]
+
+
 ssh_FLAG = True
-exp_id = 11
-EXP_NAME ='GA_CPG'
+exp_id = 2
+EXP_NAME ='PSO_CPG'
 group_note ="************ABOUT THIS EXPERIMENT****************\n" \
-            "测试所有环境是否可用!" \
-            "只针对 Snake "
-        #    "测试不同CPG权重对进化过程的影响[1 1 -1 -1 1] fitness 不同"
-            
+            "测试所有环境是否可用!"
             
 variants = VG().variants()
 num=0
@@ -73,6 +74,7 @@ os.makedirs(group_dir)
 filenames = glob.glob('*.py')  # put copy of all python files in log_dir
 for filename in filenames:  # for reference
     shutil.copy(filename, group_dir)
+
 
 variants = VG().variants()
 num = 0
@@ -96,13 +98,13 @@ num_exp =0
 
 seed =1
 
+
 # SSH Config
 hostname = '2402:f000:6:3801:2d55:548f:d03c:ccad'#'2600:1f16:e7a:a088:805d:16d6:f387:62e5'
 username = 'drl'
 key_path = '/home/ubuntu/.ssh/id_rsa_dl'
 
 port = 22
-
 
 for v in variants:
     num_exp += 1
@@ -111,35 +113,35 @@ for v in variants:
     env_name = v['env_name']
     pop_size = v['pop_size']
     max_gen = v['max_gen']
-    CXPB = v['CXPB']
-    MUTPB = v['MUTPB']
+    phi1 = v['phi1']
+    phi2 = v['phi2']
     gain_max = v['gain_max']
-  
+    speed_max = v['speed_max']
     task_mode = v['task_mode']
     max_time = v['max_time']
     fitness_mode = v['fitness_mode']
     bias_max = v['bias_max']
     phase_max = v['phase_max']
-    
 
-    os.system("python3 -m scoop GA_examples/GA_main.py " +
+    os.system("python3 -m scoop PSO_examples/pso_main.py " +
               " --seed " + str(seed) +
               " --env_name " + str(env_name) +
               " --pop_size " + str(pop_size) +
               " --max_gen " + str(max_gen) +
-              " --CXPB " + str(CXPB) +
-              " --MUTPB " + str(MUTPB) +
+              " --phi1 " + str(phi1) +
+              " --phi2 " + str(phi2) +
               " --gain_max " + str(gain_max) +
+              " --speed_max " + str(speed_max) +
               " --task_mode " + str(task_mode) +
               " --max_time " + str(max_time) +
-              " --fitness_mode " + str(fitness_mode) +
               " --phase_max " + str(phase_max) +
               " --bias_max " + str(bias_max) +
+              " --fitness_mode " + str(fitness_mode) +
               " --exp_group_dir " + str(exp_group_dir)
+
               )
     if ssh_FLAG:
         local_dir = os.path.abspath(group_dir)
         remote_dir = '/home/drl/PycharmProjects/DeployedProjects/CR_CPG/Hyper_lab/log-files/AWS_logfiles/'+exp_group_dir+'/'
         ssh.upload(local_dir, remote_dir, hostname=hostname , port=port , username=username ,
                    pkey_path=key_path)
-     
