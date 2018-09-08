@@ -48,7 +48,7 @@ class VG(VariantGenerator):
 
     @variant
     def fitness_mode(self):
-        return [  4 ]
+        return [  4,6 ]
  
 ssh_FLAG = True
 exp_id = 9
