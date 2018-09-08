@@ -13,7 +13,7 @@ class VG(VariantGenerator):
     @variant
     def pop_size(self):
         return [300]
-    
+  
     
     @variant
     def max_gen(self):
