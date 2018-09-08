@@ -42,7 +42,7 @@ class VG(VariantGenerator):
 
     @variant
     def task_mode(self):
-        return ['2_sin','2']#'3', '4', '5','2' , '2_sin', '5_sin'
+        return ['2_sin' ]#'3', '4', '5','2' , '2_sin', '5_sin'
     @variant
     def max_time(self):
         return [ 10.0 ]
