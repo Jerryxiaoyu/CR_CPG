@@ -26,7 +26,7 @@ parser.add_argument('--gain_max', type=float, default=2.0)
 parser.add_argument('--bias_max', type=float, default=90.0) #angle
 parser.add_argument('--phase_max', type=float, default=45.0)  #angle
 
-parser.add_argument('--task_mode', type=str, default='2_singb' ) # 2, 3, 4, 5
+parser.add_argument('--task_mode', type=str, default='3_singb' ) # 2, 3, 4, 5
 parser.add_argument('--max_time', type=float, default=10.0 )
 parser.add_argument('--fitness_mode', type=int, default=6 )
 parser.add_argument('--exp_group_dir', type=str, default= None )
@@ -158,7 +158,12 @@ elif env_name == 'CellrobotBigSnakeEnv-v0':
     elif task_mode == '2_singb':
         from CPG_core.snake_osc.bigsnake_oscillator_2_sin_gb import oscillator_nw
         particles_num = 17
-        parm_list_key = ['gain' ]
+        parm_list_key = ['phase' ]
+        mutate_fun = tools.mutGaussian
+    elif task_mode == '3_singb':
+        from CPG_core.snake_osc.bigsnake_oscillator_3_sin_gb import oscillator_nw
+        particles_num = 33
+        parm_list_key = ['gain', 'phase' ]
         mutate_fun = tools.mutGaussian
 else:
     assert print("env :{} task does not implemented.".format(args.env_name))
