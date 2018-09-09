@@ -57,8 +57,8 @@ if __name__ == '__main__':
      
         key_path = '/home/ubuntu/.ssh/id_rsa_dl'
         key = paramiko.RSAKey.from_private_key_file(key_path)
-        dir_list = ['Sep_08GA_CPG_Exp11', 'Sep_08PSO_CPG_Exp2']
-        
+        #dir_list = ['Sep_08GA_CPG_Exp11', 'Sep_08PSO_CPG_Exp2']
+        dir_list = ['Sep_08GA_CPG_Exp10']
         for exp_group_dir in dir_list:
             local_dir = '/home/ubuntu/jerry/projects/CR_CPG/log-files/'+exp_group_dir+'/'
             remote_dir = '/home/drl/PycharmProjects/DeployedProjects/CR_CPG/Hyper_lab/log-files/AWS_logfiles/'+exp_group_dir+'/'
