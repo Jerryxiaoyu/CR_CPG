@@ -51,11 +51,11 @@ class VG(VariantGenerator):
         return [  4  ]
  
 ssh_FLAG = True
-exp_id = 11
+exp_id = 12
 EXP_NAME ='GA_CPG'
 group_note ="************ABOUT THIS EXPERIMENT****************\n" \
             "测试所有环境是否可用!" \
-            "只针对 Snake "
+            "只针对 蝴蝶 和蛇"
         #    "测试不同CPG权重对进化过程的影响[1 1 -1 -1 1] fitness 不同"
             
             
