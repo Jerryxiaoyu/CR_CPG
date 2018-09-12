@@ -9,7 +9,7 @@ class VG(VariantGenerator):
     
     @variant
     def env_name(self):
-        return ['CellrobotBigdog2Env-v0' ]  #   'CellrobotEnv-v0' , 'Cellrobot2Env-v0', 'CellrobotSnakeEnv-v0'  , 'CellrobotSnake2Env-v0','CellrobotButterflyEnv-v0', 'CellrobotBigdog2Env-v0'
+        return ['CellrobotButterflyEnv-v0','CellrobotSnake2Env-v0' ]  #   'CellrobotEnv-v0' , 'Cellrobot2Env-v0', 'CellrobotSnakeEnv-v0'  , 'CellrobotSnake2Env-v0','CellrobotButterflyEnv-v0', 'CellrobotBigdog2Env-v0'
     @variant
     def pop_size(self):
         return [300]
@@ -29,7 +29,7 @@ class VG(VariantGenerator):
 
     @variant
     def gain_max(self):
-        return [ 1,2  ]
+        return [ 1   ]
 
     @variant
     def bias_max(self):
@@ -37,11 +37,11 @@ class VG(VariantGenerator):
 
     @variant
     def phase_max(self):
-        return [90.0 ]
+        return [90.0,180 ]
     
     @variant
     def task_mode(self):
-        return [ '2', '2_sin',   '5_sin' ]#  '2' ,'3', '4', '5', '2_sin', '5_sin'
+        return [ '2_sin',   '5_sin' ]#  '2' ,'3', '4', '5', '2_sin', '5_sin'
     @variant
     def max_time(self):
         return [ 10.0 ]
@@ -97,7 +97,7 @@ num_exp =0
 seed =1
 
 # SSH Config
-hostname = '2402:f000:6:3801:2d55:548f:d03c:ccad'#'2600:1f16:e7a:a088:805d:16d6:f387:62e5'
+hostname = '2402:f000:6:3801:ee1c:d67d:4f92:55ad' #'2600:1f16:e7a:a088:805d:16d6:f387:62e5'
 username = 'drl'
 key_path = '/home/ubuntu/.ssh/id_rsa_dl'
 

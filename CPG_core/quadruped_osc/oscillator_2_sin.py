@@ -190,6 +190,7 @@ def oscillator_nw(position_vector, max_time=10.0, fitness_option=6, plot = False
     fallen = monitor_thread.fallen
     up = up_time # Using a more accurate up time than monitor_thread.up_time,
     x_distance = end_pos_x - start_pos_x
+    
     abs_y_deviation = end_pos_y
     avg_footstep_x = None
     var_torso_alpha = monitor_thread.obs[3]
@@ -278,6 +279,7 @@ def oscillator_nw(position_vector, max_time=10.0, fitness_option=6, plot = False
             'fallen': fallen,
             'up': up,
             'x_distance': x_distance,
+            
             'abs_y_deviation': abs_y_deviation,
             'avg_footstep_x': avg_footstep_x,
             'var_torso_alpha': var_torso_alpha,
