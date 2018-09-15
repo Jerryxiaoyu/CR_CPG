@@ -170,10 +170,8 @@ else:
 
 
 env = gym.make(env_name)
-log_name = args.env_name+'_GA_'+args.task_mode
+log_name = args.env_name+'_GA_'+args.task_mode+'_fitness_'+str(args.fitness_mode)
 evaluate_fun = partial(oscillator_nw, env_name=env_name, max_time=args.max_time, fitness_option= args.fitness_mode)
-
-
 
 # Set the logging variables
 # This also creates a new log file
@@ -308,7 +306,7 @@ POP_SIZE = args.pop_size
 MAX_GEN = args.max_gen
 
 def main():
-    random.seed(64)
+    random.seed(args.seed)
 
     # Create an initial population of `POP_SIZE` individuals (where each individual is a list of floats)
     pop = toolbox.population(n=POP_SIZE)
