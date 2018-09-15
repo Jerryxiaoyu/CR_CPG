@@ -53,6 +53,7 @@ class VG(VariantGenerator):
     def fitness_mode(self):
         return [  4  ]
  
+ 
 ssh_FLAG = False
 exp_id = 15
 EXP_NAME ='GA_CPG_icra'
