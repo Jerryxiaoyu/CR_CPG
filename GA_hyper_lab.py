@@ -29,7 +29,7 @@ class VG(VariantGenerator):
 
     @variant
     def gain_max(self):
-        return [ 2, 1,    ]
+        return [  1, 2   ]
 
     @variant
     def bias_max(self):
@@ -51,11 +51,11 @@ class VG(VariantGenerator):
         return [  4  ]
  
 ssh_FLAG = True
-exp_id = 13
+exp_id = 14
 EXP_NAME ='GA_CPG'
 group_note ="************ABOUT THIS EXPERIMENT****************\n" \
             "测试所有环境是否可用! Bigdog " \
-            "只针对 蝴蝶 和蛇"
+            " "
         #    "测试不同CPG权重对进化过程的影响[1 1 -1 -1 1] fitness 不同"
             
             

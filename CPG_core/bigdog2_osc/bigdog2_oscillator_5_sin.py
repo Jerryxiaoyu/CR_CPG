@@ -102,10 +102,10 @@ def oscillator_nw(position_vector, max_time=10.0, fitness_option=6, plot = False
         output_list = CPG_controller.output(state=None)
 
         # Set the joint positions
-        current_angles = {'cell0': output_list[1], 'cell1': 0, 'cell2': 0,
+        current_angles = {'cell0': 0, 'cell1': 0, 'cell2': 0,
                           'cell3': 0, 'cell4': output_list[2],
                           'cell5': output_list[3], 'cell6': output_list[4], 'cell7': output_list[5],
-                          'cell8': output_list[6],'cell9': output_list[7],'cell10': output_list[8],
+                          'cell8': 0,'cell9': output_list[7],'cell10': output_list[8],
                           'cell11': output_list[9],'cell12': output_list[10],'cell13': output_list[11],
                           'cell14': output_list[12], 'cell15': output_list[13], 'cell16': output_list[14],
                           }
