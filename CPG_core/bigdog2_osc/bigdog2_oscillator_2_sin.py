@@ -85,7 +85,7 @@ def oscillator_nw(position_vector, max_time=10.0, fitness_option=6, plot = False
    # robot_handle.set_angles_slow(target_angles=initial_bias_angles, duration=2.0, step=0.01)
 
     # Sleep for 2 seconds to let any oscillations to die down
-    #time.sleep(2.0)
+    time.sleep(2.0)
 
     # Reset the timer of the monitor
     monitor_thread.reset_timer()

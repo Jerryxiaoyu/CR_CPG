@@ -80,9 +80,13 @@ def oscillator_nw(position_vector, max_time=10.0, fitness_option=6, plot = False
     
     # Start the monitoring thread
     monitor_thread.start()
-    
-    # Set init angles
-    #robot_handle.set_angles_slow(target_angles=initial_bias_angles, duration=2.0, step=0.01)
+
+    # initial_bias_angles = {'cell0': position_vector[8], 'cell1': position_vector[9], 'cell2': position_vector[10], 'cell3': position_vector[11], 'cell4': position_vector[12],
+    #                        'cell5': position_vector[13], 'cell6': position_vector[14],
+    #                        }
+    #
+    # # Set init angles
+    # robot_handle.set_angles_slow(target_angles=initial_bias_angles, duration=2.0, step=0.01)
 
     # Sleep for 2 seconds to let any oscillations to die down
     time.sleep(2.0)
